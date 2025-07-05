@@ -552,7 +552,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       logout,
       isAdmin,
       refreshProfile
-    }} data-id="ppi93nnls" data-path="src/contexts/AuthContext.tsx">
+    }}>
       {children}
     </AuthContext.Provider>);
 
@@ -565,3 +565,4 @@ export const useAuth = () => {
   }
   return context;
 };
+

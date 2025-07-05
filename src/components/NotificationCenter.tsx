@@ -9,6 +9,8 @@ import { Progress } from '@/components/ui/progress';
 import { Separator } from '@/components/ui/separator';
 import { useAuth } from '../contexts/AuthContext';
 import { useToast } from '@/hooks/use-toast';
+import { Product, ProductVariant } from '@/types/index';
+import { useFieldArray } from 'react-hook-form';
 
 interface Notification {
   ID: number;
@@ -25,7 +27,7 @@ interface Notification {
   created_at: string;
 }
 
-export default function NotificationCenter() {
+function NotificationCenter() {
   const [notifications, setNotifications] = useState<Notification[]>([]);
   const [unreadCount, setUnreadCount] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
@@ -180,32 +182,33 @@ export default function NotificationCenter() {
   if (!user) return null;
 
   return (
-    <Popover open={isOpen} onOpenChange={setIsOpen} data-id="e7ugc2vvo" data-path="src/components/NotificationCenter.tsx">
-      <PopoverTrigger asChild data-id="hivnu74gc" data-path="src/components/NotificationCenter.tsx">
-        <Button variant="ghost" size="sm" className="relative" data-id="b60rbac9u" data-path="src/components/NotificationCenter.tsx">
-          <Bell className="h-5 w-5" data-id="nr9wwg97y" data-path="src/components/NotificationCenter.tsx" />
+    <Popover open={isOpen} onOpenChange={setIsOpen}>
+      <PopoverTrigger asChild>
+        <Button variant="ghost" size="sm" className="relative" aria-label="Open notifications">
+          <Bell className="h-5 w-5" />
           {unreadCount > 0 &&
           <Badge
             variant="destructive"
-            className="absolute -top-2 -right-2 h-5 w-5 p-0 flex items-center justify-center text-xs" data-id="2xiqmroju" data-path="src/components/NotificationCenter.tsx">
+            className="absolute -top-2 -right-2 h-5 w-5 p-0 flex items-center justify-center text-xs">
 
               {unreadCount > 99 ? '99+' : unreadCount}
             </Badge>
           }
         </Button>
       </PopoverTrigger>
-      <PopoverContent align="end" className="w-80 p-0" data-id="mbj0ytvx5" data-path="src/components/NotificationCenter.tsx">
-        <Card className="border-0 shadow-lg" data-id="6e20lyjiu" data-path="src/components/NotificationCenter.tsx">
-          <CardHeader className="pb-3" data-id="vevnbmlyq" data-path="src/components/NotificationCenter.tsx">
-            <div className="flex items-center justify-between" data-id="k42ri1opb" data-path="src/components/NotificationCenter.tsx">
-              <CardTitle className="text-lg" data-id="l6ki83jbi" data-path="src/components/NotificationCenter.tsx">Notifications</CardTitle>
-              <div className="flex items-center gap-2" data-id="cv8zps8k5" data-path="src/components/NotificationCenter.tsx">
+      <PopoverContent align="end" className="w-80 p-0">
+        <Card className="border-0 shadow-lg">
+          <CardHeader className="pb-3">
+            <div className="flex items-center justify-between">
+              <CardTitle className="text-lg">Notifications</CardTitle>
+              <div className="flex items-center gap-2">
                 {unreadCount > 0 &&
                 <Button
                   variant="ghost"
                   size="sm"
+                  aria-label="Mark all as read"
                   onClick={markAllAsRead}
-                  className="text-xs" data-id="8iedtxmux" data-path="src/components/NotificationCenter.tsx">
+                  className="text-xs">
 
                     Mark all read
                   </Button>
@@ -213,75 +216,74 @@ export default function NotificationCenter() {
                 <Button
                   variant="ghost"
                   size="sm"
-                  onClick={() => setIsOpen(false)} data-id="n2ou71dq3" data-path="src/components/NotificationCenter.tsx">
+                  aria-label="Close notifications"
+                  onClick={() => setIsOpen(false)}>
 
-                  <X className="h-4 w-4" data-id="bs9db8kio" data-path="src/components/NotificationCenter.tsx" />
+                  <X className="h-4 w-4" />
                 </Button>
               </div>
             </div>
             {unreadCount > 0 &&
-            <CardDescription data-id="x3xuwyqwo" data-path="src/components/NotificationCenter.tsx">
+            <CardDescription>
                 You have {unreadCount} unread notification{unreadCount > 1 ? 's' : ''}
               </CardDescription>
             }
           </CardHeader>
-          <Separator data-id="rxin3bv7r" data-path="src/components/NotificationCenter.tsx" />
-          <CardContent className="p-0 max-h-96 overflow-y-auto" data-id="yuzhf2enl" data-path="src/components/NotificationCenter.tsx">
-            {isLoading ?
-            <div className="p-4 text-center text-gray-500" data-id="an7tut49u" data-path="src/components/NotificationCenter.tsx">
+          <Separator />
+          <CardContent className="p-0 max-h-96 overflow-y-auto">
+            {isLoading ? (
+              <div className="p-4 text-center text-gray-500">
                 Loading notifications...
-              </div> :
-            notifications.length === 0 ?
-            <div className="p-4 text-center text-gray-500" data-id="bzncc1xoi" data-path="src/components/NotificationCenter.tsx">
+              </div>
+            ) : notifications.length === 0 ? (
+              <div className="p-4 text-center text-gray-500">
                 No notifications yet
-              </div> :
-
-            <div className="space-y-0" data-id="dinigc2zv" data-path="src/components/NotificationCenter.tsx">
-                {notifications.map((notification, index) =>
-              <div key={notification.ID} data-id="b0z4kemi2" data-path="src/components/NotificationCenter.tsx">
+              </div>
+            ) : (
+              <div className="space-y-0">
+                {notifications.map((notification, index) => (
+                  <React.Fragment key={notification.ID}>
                     <div
-                  className={`p-4 hover:bg-gray-50 transition-colors ${
-                  !notification.is_read ? 'bg-blue-50 border-l-4 border-blue-500' : ''}`
-                  } data-id="an9tiqf3n" data-path="src/components/NotificationCenter.tsx">
-
-                      <div className="flex items-start gap-3" data-id="zlk1hd3pu" data-path="src/components/NotificationCenter.tsx">
-                        <div className={`w-8 h-8 rounded-full flex items-center justify-center text-white text-sm ${getNotificationColor(notification.type)}`} data-id="b8ekbokwp" data-path="src/components/NotificationCenter.tsx">
+                      className={`p-4 hover:bg-gray-50 transition-colors ${
+                        !notification.is_read ? 'bg-blue-50 border-l-4 border-blue-500' : ''
+                      }`}
+                    >
+                      <div className="flex items-start gap-3">
+                        <div className={`w-8 h-8 rounded-full flex items-center justify-center text-white text-sm ${getNotificationColor(notification.type)}`}>
                           {getNotificationIcon(notification.type)}
                         </div>
-                        <div className="flex-1 min-w-0" data-id="6oy4iuali" data-path="src/components/NotificationCenter.tsx">
-                          <div className="flex items-start justify-between gap-2" data-id="qtga7b97g" data-path="src/components/NotificationCenter.tsx">
-                            <div className="flex-1" data-id="j6byp4x4o" data-path="src/components/NotificationCenter.tsx">
-                              <p className={`font-medium text-sm ${!notification.is_read ? 'text-gray-900' : 'text-gray-700'}`} data-id="c7oprzm15" data-path="src/components/NotificationCenter.tsx">
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-start justify-between gap-2">
+                            <div className="flex-1">
+                              <p className={`font-medium text-sm ${!notification.is_read ? 'text-gray-900' : 'text-gray-700'}`}>
                                 {notification.title}
                               </p>
-                              <p className="text-xs text-gray-600 mt-1 line-clamp-2" data-id="vkfreus41" data-path="src/components/NotificationCenter.tsx">
+                              <p className="text-xs text-gray-600 mt-1 line-clamp-2">
                                 {notification.message}
                               </p>
-                              <p className="text-xs text-gray-500 mt-2" data-id="h6kjjiivl" data-path="src/components/NotificationCenter.tsx">
+                              <p className="text-xs text-gray-500 mt-2">
                                 {formatTime(notification.sent_at || notification.created_at)}
                               </p>
                             </div>
-                            <DropdownMenu data-id="4nkh33v2j" data-path="src/components/NotificationCenter.tsx">
-                              <DropdownMenuTrigger asChild data-id="3j347u8fw" data-path="src/components/NotificationCenter.tsx">
-                                <Button variant="ghost" size="sm" className="h-6 w-6 p-0" data-id="9qkhxnv1y" data-path="src/components/NotificationCenter.tsx">
-                                  <MoreVertical className="h-4 w-4" data-id="abx225xj8" data-path="src/components/NotificationCenter.tsx" />
+                            <DropdownMenu>
+                              <DropdownMenuTrigger asChild>
+                                <Button variant="ghost" size="sm" className="h-6 w-6 p-0">
+                                  <MoreVertical className="h-4 w-4" />
                                 </Button>
                               </DropdownMenuTrigger>
-                              <DropdownMenuContent align="end" data-id="1jzygl49t" data-path="src/components/NotificationCenter.tsx">
-                                {!notification.is_read &&
-                            <DropdownMenuItem
-                              onClick={() => markAsRead(notification.ID)}
-                              className="cursor-pointer" data-id="5eyana5s1" data-path="src/components/NotificationCenter.tsx">
-
-                                    <Eye className="h-4 w-4 mr-2" data-id="8k7k4s84q" data-path="src/components/NotificationCenter.tsx" />
+                              <DropdownMenuContent align="end">
+                                {!notification.is_read && (
+                                  <DropdownMenuItem
+                                    onClick={() => markAsRead(notification.ID)}
+                                    className="cursor-pointer">
+                                    <Eye className="h-4 w-4 mr-2" />
                                     Mark as read
                                   </DropdownMenuItem>
-                            }
+                                )}
                                 <DropdownMenuItem
-                              onClick={() => deleteNotification(notification.ID)}
-                              className="cursor-pointer text-red-600" data-id="6wk8rivm9" data-path="src/components/NotificationCenter.tsx">
-
-                                  <Trash2 className="h-4 w-4 mr-2" data-id="hxsjgo3zo" data-path="src/components/NotificationCenter.tsx" />
+                                  onClick={() => deleteNotification(notification.ID)}
+                                  className="cursor-pointer text-red-600">
+                                  <Trash2 className="h-4 w-4 mr-2" />
                                   Delete
                                 </DropdownMenuItem>
                               </DropdownMenuContent>
@@ -290,14 +292,17 @@ export default function NotificationCenter() {
                         </div>
                       </div>
                     </div>
-                    {index < notifications.length - 1 && <Separator data-id="axjt9l1m2" data-path="src/components/NotificationCenter.tsx" />}
-                  </div>
-              )}
+                    {index < notifications.length - 1 && <Separator key={`separator-${notification.ID}`} />}
+                  </React.Fragment>
+                ))}
               </div>
-            }
+            )}
           </CardContent>
         </Card>
       </PopoverContent>
-    </Popover>);
-
+    </Popover>
+  );
 }
+
+export default NotificationCenter;
+

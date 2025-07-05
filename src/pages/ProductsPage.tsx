@@ -95,55 +95,55 @@ const ProductsPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50" data-id="0rv31v6k8" data-path="src/pages/ProductsPage.tsx">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8" data-id="datdt0hbv" data-path="src/pages/ProductsPage.tsx">
+    <div className="min-h-screen bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
-        <div className="mb-8" data-id="amekzh093" data-path="src/pages/ProductsPage.tsx">
-          <h1 className="text-3xl font-bold text-gray-900 mb-4" data-id="jwmnmx4fu" data-path="src/pages/ProductsPage.tsx">Products</h1>
-          <p className="text-lg text-gray-600" data-id="bazs8cwxj" data-path="src/pages/ProductsPage.tsx">
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold text-gray-900 mb-4">Products</h1>
+          <p className="text-lg text-gray-600">
             Discover our complete collection of amazing products
           </p>
         </div>
 
         {/* Search and Filters */}
-        <div className="mb-8" data-id="mu5xvql2t" data-path="src/pages/ProductsPage.tsx">
+        <div className="mb-8">
           <ProductSearch
             onFiltersChange={handleFiltersChange}
-            totalResults={filteredAndSortedProducts.length} data-id="vfw8rcgyv" data-path="src/pages/ProductsPage.tsx" />
+            totalResults={filteredAndSortedProducts.length} />
 
         </div>
 
         {/* Results Header */}
-        <div className="flex justify-between items-center mb-6" data-id="6ibpsa46v" data-path="src/pages/ProductsPage.tsx">
-          <div className="flex items-center space-x-4" data-id="g6qwpxzst" data-path="src/pages/ProductsPage.tsx">
-            <p className="text-gray-600" data-id="qfnon8p8r" data-path="src/pages/ProductsPage.tsx">
+        <div className="flex justify-between items-center mb-6">
+          <div className="flex items-center space-x-4">
+            <p className="text-gray-600">
               Showing {filteredAndSortedProducts.length} of {allProducts.length} products
             </p>
           </div>
 
           {/* View Mode Toggle */}
-          <div className="flex space-x-2" data-id="oiomivvkq" data-path="src/pages/ProductsPage.tsx">
+          <div className="flex space-x-2">
             <Button
               variant={viewMode === 'grid' ? 'default' : 'outline'}
               size="sm"
-              onClick={() => setViewMode('grid')} data-id="frdsftfjp" data-path="src/pages/ProductsPage.tsx">
+              onClick={() => setViewMode('grid')}>
 
-              <Grid className="w-4 h-4" data-id="v7zzkywc6" data-path="src/pages/ProductsPage.tsx" />
+              <Grid className="w-4 h-4" />
             </Button>
             <Button
               variant={viewMode === 'list' ? 'default' : 'outline'}
               size="sm"
-              onClick={() => setViewMode('list')} data-id="et5lomyys" data-path="src/pages/ProductsPage.tsx">
+              onClick={() => setViewMode('list')}>
 
-              <List className="w-4 h-4" data-id="2m34uxlrl" data-path="src/pages/ProductsPage.tsx" />
+              <List className="w-4 h-4" />
             </Button>
           </div>
         </div>
 
         {/* Loading State */}
         {isLoading ?
-        <div className="flex justify-center items-center py-12" data-id="lo9v4i7tq" data-path="src/pages/ProductsPage.tsx">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600" data-id="nw09bmku4" data-path="src/pages/ProductsPage.tsx"></div>
+        <div className="flex justify-center items-center py-12">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
           </div> :
 
         /* Products Grid */
@@ -159,11 +159,11 @@ const ProductsPage: React.FC = () => {
             )}
         </div> :
 
-        <Card className="p-12 text-center" data-id="g5w69z3ac" data-path="src/pages/ProductsPage.tsx">
-            <div className="text-gray-500" data-id="suy1pfc4n" data-path="src/pages/ProductsPage.tsx">
-              <Search className="w-12 h-12 mx-auto mb-4 text-gray-300" data-id="gbprn1kvz" data-path="src/pages/ProductsPage.tsx" />
-              <h3 className="text-lg font-medium mb-2" data-id="d0wtsufq9" data-path="src/pages/ProductsPage.tsx">No products found</h3>
-              <p className="text-sm" data-id="5nrk90skr" data-path="src/pages/ProductsPage.tsx">
+        <Card className="p-12 text-center">
+            <div className="text-gray-500">
+              <Search className="w-12 h-12 mx-auto mb-4 text-gray-300" />
+              <h3 className="text-lg font-medium mb-2">No products found</h3>
+              <p className="text-sm">
                 Try adjusting your search criteria to see more products.
               </p>
             </div>

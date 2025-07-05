@@ -70,9 +70,11 @@ export const WishlistProvider: React.FC<WishlistProviderProps> = ({ children }) 
         return;
       }
 
-      if (data?.List) {
+      if (Array.isArray(data?.List)) {
         const productIds = data.List.map((item: WishlistItem) => item.product_id);
         setWishlistItems(productIds);
+      } else {
+        setWishlistItems([]);
       }
     } catch (error) {
       console.error('Error in loadWishlist:', error);
@@ -272,7 +274,7 @@ export const WishlistProvider: React.FC<WishlistProviderProps> = ({ children }) 
   };
 
   return (
-    <WishlistContext.Provider value={value} data-id="nvpm6nofx" data-path="src/contexts/WishlistContext.tsx">
+    <WishlistContext.Provider value={value}>
       {children}
     </WishlistContext.Provider>);
 

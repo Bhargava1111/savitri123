@@ -96,6 +96,14 @@
           body: JSON.stringify(params)
         });
         
+        // Check if response is valid JSON before parsing
+        const contentType = response.headers.get('content-type');
+        if (!contentType || !contentType.includes('application/json')) {
+          const text = await response.text();
+          console.error(`Non-JSON response from server for table ${tableId}:`, text);
+          return { data: null, error: 'Server returned non-JSON response' };
+        }
+        
         const result = await response.json();
         
         if (result.success) {
@@ -118,6 +126,14 @@
           },
           body: JSON.stringify(data)
         });
+        
+        // Check if response is valid JSON before parsing
+        const contentType = response.headers.get('content-type');
+        if (!contentType || !contentType.includes('application/json')) {
+          const text = await response.text();
+          console.error(`Non-JSON response from server for table create ${tableId}:`, text);
+          return { data: null, error: 'Server returned non-JSON response' };
+        }
         
         const result = await response.json();
         
@@ -142,6 +158,14 @@
           body: JSON.stringify(data)
         });
         
+        // Check if response is valid JSON before parsing
+        const contentType = response.headers.get('content-type');
+        if (!contentType || !contentType.includes('application/json')) {
+          const text = await response.text();
+          console.error(`Non-JSON response from server for table update ${tableId}:`, text);
+          return { data: null, error: 'Server returned non-JSON response' };
+        }
+        
         const result = await response.json();
         
         if (result.success) {
@@ -164,6 +188,14 @@
           },
           body: JSON.stringify({ id })
         });
+        
+        // Check if response is valid JSON before parsing
+        const contentType = response.headers.get('content-type');
+        if (!contentType || !contentType.includes('application/json')) {
+          const text = await response.text();
+          console.error(`Non-JSON response from server for table delete ${tableId}:`, text);
+          return { data: null, error: 'Server returned non-JSON response' };
+        }
         
         const result = await response.json();
         

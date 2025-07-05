@@ -1,4 +1,5 @@
 {
+  "10399": [],
   "users": [
     {
       "ID": "1",
@@ -17,109 +18,282 @@
       "whatsapp_notifications": true,
       "marketing_notifications": true,
       "auth_method": "email",
-      "created_at": "2025-06-15T17:24:50.068Z"
+      "created_at": "2025-06-15T17:24:50.068Z",
+      "ID": "1",
+      "email": "1234567890@phone.user",
+      "updated_at": "2025-07-05T11:33:11.082Z"
+    },
+    {
+      "user_id": "MANAUSER00002",
+      "full_name": "pulaganti Bhargava",
+      "email": "pulagantibhargav@gmail.com",
+      "phone_number": "09390872628",
+      "auth_method": "phone",
+      "email_notifications": true,
+      "whatsapp_notifications": true,
+      "marketing_notifications": true,
+      "avatar_url": "",
+      "created_at": "2025-07-05T19:42:36.628Z",
+      "updated_at": "2025-07-05T19:42:36.628Z",
+      "id": "MANAUSER00002"
+    },
+    {
+      "user_id": "MANAUSER00003",
+      "full_name": "pulaganti Bhargava",
+      "email": "pulagantibhargav@gmail.com",
+      "phone_number": "09390872628",
+      "auth_method": "phone",
+      "email_notifications": true,
+      "whatsapp_notifications": true,
+      "marketing_notifications": true,
+      "avatar_url": "",
+      "created_at": "2025-07-05T19:42:50.679Z",
+      "updated_at": "2025-07-05T19:42:50.679Z",
+      "id": "MANAUSER00003"
+    },
+    {
+      "user_id": "MANAUSER00004",
+      "full_name": "pulaganti Bhargava",
+      "email": "pulagantibhargav@gmail.com",
+      "phone_number": "09390872628",
+      "auth_method": "phone",
+      "email_notifications": true,
+      "whatsapp_notifications": true,
+      "marketing_notifications": true,
+      "avatar_url": "",
+      "created_at": "2025-07-05T19:43:09.567Z",
+      "updated_at": "2025-07-05T19:43:09.567Z",
+      "id": "MANAUSER00004"
+    },
+    {
+      "user_id": "MANAUSER00005",
+      "full_name": "pulaganti Bhargava",
+      "email": "pulagantibhargav@gmail.com",
+      "phone_number": "09390872628",
+      "auth_method": "phone",
+      "email_notifications": true,
+      "whatsapp_notifications": true,
+      "marketing_notifications": true,
+      "avatar_url": "",
+      "created_at": "2025-07-05T19:43:23.113Z",
+      "updated_at": "2025-07-05T19:43:23.113Z",
+      "id": "MANAUSER00005"
+    },
+    {
+      "user_id": "MANAUSER00006",
+      "full_name": "pulaganti Bhargava",
+      "email": "pulagantibhargav@gmail.com",
+      "phone_number": "09390872628",
+      "auth_method": "phone",
+      "email_notifications": true,
+      "whatsapp_notifications": true,
+      "marketing_notifications": true,
+      "avatar_url": "",
+      "created_at": "2025-07-05T19:43:52.908Z",
+      "updated_at": "2025-07-05T19:43:52.908Z",
+      "id": "MANAUSER00006"
     }
   ],
   "products": [
     {
       "id": "1",
-      "name": "Product 1",
-      "description": "Description for Product 1",
-      "price": 71,
+      "name": "Premium Basmati Rice",
+      "description": "Long grain aromatic basmati rice, perfect for biryanis and special occasions. Aged for 2 years for enhanced flavor.",
+      "price": 120,
       "image": "/placeholder.svg",
-      "category_id": "2",
-      "stock": 31,
-      "created_at": "2025-06-15T17:24:50.068Z"
+      "category_id": "1",
+      "stock": 50,
+      "created_at": "2025-01-15T10:00:00.000Z"
     },
     {
       "id": "2",
-      "name": "Product 2",
-      "description": "Description for Product 2",
-      "price": 33,
+      "name": "Organic Quinoa",
+      "description": "Protein-rich superfood quinoa, perfect for healthy meals. Gluten-free and packed with nutrients.",
+      "price": 280,
       "image": "/placeholder.svg",
-      "category_id": "2",
-      "stock": 86,
-      "created_at": "2025-06-15T17:24:50.068Z"
+      "category_id": "1",
+      "stock": 35,
+      "created_at": "2025-01-15T10:00:00.000Z"
     },
     {
       "id": "3",
-      "name": "Product 3",
-      "description": "Description for Product 3",
-      "price": 36,
+      "name": "Fresh Alphonso Mangoes",
+      "description": "King of mangoes - sweet, juicy Alphonso mangoes from Ratnagiri. Premium quality, hand-picked.",
+      "price": 450,
       "image": "/placeholder.svg",
-      "category_id": "3",
-      "stock": 88,
-      "created_at": "2025-06-15T17:24:50.068Z"
+      "category_id": "2",
+      "stock": 25,
+      "created_at": "2025-01-15T10:00:00.000Z"
     },
     {
       "id": "4",
-      "name": "Product 4",
-      "description": "Description for Product 4",
-      "price": 91,
+      "name": "Organic Spinach",
+      "description": "Fresh, organic spinach leaves. Rich in iron and vitamins. Perfect for healthy cooking.",
+      "price": 40,
       "image": "/placeholder.svg",
-      "category_id": "2",
-      "stock": 81,
-      "created_at": "2025-06-15T17:24:50.068Z"
+      "category_id": "3",
+      "stock": 60,
+      "created_at": "2025-01-15T10:00:00.000Z"
     },
     {
       "id": "5",
-      "name": "Product 5",
-      "description": "Description for Product 5",
-      "price": 94,
+      "name": "Paneer (Fresh Cottage Cheese)",
+      "description": "Soft, fresh cottage cheese made from pure milk. High in protein, perfect for Indian cuisine.",
+      "price": 180,
       "image": "/placeholder.svg",
-      "category_id": "2",
-      "stock": 71,
-      "created_at": "2025-06-15T17:24:50.068Z"
+      "category_id": "4",
+      "stock": 40,
+      "created_at": "2025-01-15T10:00:00.000Z"
     },
     {
       "id": "6",
-      "name": "Product 6",
-      "description": "Description for Product 6",
-      "price": 16,
+      "name": "Garam Masala Powder",
+      "description": "Authentic blend of aromatic spices. Made with traditional recipe for perfect flavor enhancement.",
+      "price": 85,
       "image": "/placeholder.svg",
-      "category_id": "1",
-      "stock": 26,
-      "created_at": "2025-06-15T17:24:50.068Z"
+      "category_id": "5",
+      "stock": 75,
+      "created_at": "2025-01-15T10:00:00.000Z"
     },
     {
       "id": "7",
-      "name": "Product 7",
-      "description": "Description for Product 7",
-      "price": 21,
+      "name": "Whole Wheat Flour",
+      "description": "Stone-ground whole wheat flour. Rich in fiber and nutrients. Perfect for rotis and bread.",
+      "price": 65,
       "image": "/placeholder.svg",
-      "category_id": "3",
-      "stock": 82,
-      "created_at": "2025-06-15T17:24:50.068Z"
+      "category_id": "1",
+      "stock": 80,
+      "created_at": "2025-01-15T10:00:00.000Z"
     },
     {
       "id": "8",
-      "name": "Product 8",
-      "description": "Description for Product 8",
-      "price": 44,
+      "name": "Himalayan Pink Salt",
+      "description": "Pure, unrefined pink salt from the Himalayas. Rich in minerals and natural flavor.",
+      "price": 150,
       "image": "/placeholder.svg",
-      "category_id": "2",
-      "stock": 69,
-      "created_at": "2025-06-15T17:24:50.068Z"
+      "category_id": "5",
+      "stock": 45,
+      "created_at": "2025-01-15T10:00:00.000Z"
     },
     {
       "id": "9",
-      "name": "Product 9",
-      "description": "Description for Product 9",
-      "price": 55,
+      "name": "Organic Coconut Oil",
+      "description": "Cold-pressed virgin coconut oil. Perfect for cooking and health benefits. 100% pure and natural.",
+      "price": 320,
       "image": "/placeholder.svg",
-      "category_id": "1",
-      "stock": 76,
-      "created_at": "2025-06-15T17:24:50.068Z"
+      "category_id": "6",
+      "stock": 55,
+      "created_at": "2025-01-15T10:00:00.000Z"
     },
     {
       "id": "10",
-      "name": "Product 10",
-      "description": "Description for Product 10",
-      "price": 101,
+      "name": "Red Kidney Beans (Rajma)",
+      "description": "Premium quality red kidney beans. High in protein and fiber. Perfect for North Indian cuisine.",
+      "price": 95,
       "image": "/placeholder.svg",
-      "category_id": "1",
-      "stock": 74,
-      "created_at": "2025-06-15T17:24:50.068Z"
+      "category_id": "7",
+      "stock": 70,
+      "created_at": "2025-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "11",
+      "name": "Cashew Nuts",
+      "description": "Premium quality cashews. Crunchy and nutritious. Perfect for snacking and cooking.",
+      "price": 680,
+      "image": "/placeholder.svg",
+      "category_id": "8",
+      "stock": 30,
+      "created_at": "2025-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "12",
+      "name": "Organic Green Tea",
+      "description": "Premium loose leaf green tea. Rich in antioxidants and natural flavor. Perfect for healthy living.",
+      "price": 240,
+      "image": "/placeholder.svg",
+      "category_id": "9",
+      "stock": 45,
+      "created_at": "2025-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "13",
+      "name": "Turmeric Powder",
+      "description": "Pure turmeric powder with high curcumin content. Anti-inflammatory and perfect for Indian cooking.",
+      "price": 75,
+      "image": "/placeholder.svg",
+      "category_id": "5",
+      "stock": 85,
+      "created_at": "2025-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "14",
+      "name": "Organic Honey",
+      "description": "Pure, raw honey from organic farms. Natural sweetener with health benefits. No added sugar.",
+      "price": 380,
+      "image": "/placeholder.svg",
+      "category_id": "10",
+      "stock": 25,
+      "created_at": "2025-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "15",
+      "name": "Chicken Curry Cut",
+      "description": "Fresh chicken cut into curry pieces. Tender and perfect for Indian curries and biryanis.",
+      "price": 220,
+      "image": "/placeholder.svg",
+      "category_id": "11",
+      "stock": 20,
+      "created_at": "2025-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "16",
+      "name": "Pomfret Fish",
+      "description": "Fresh pomfret fish, cleaned and ready to cook. Perfect for frying and curries.",
+      "price": 480,
+      "image": "/placeholder.svg",
+      "category_id": "12",
+      "stock": 15,
+      "created_at": "2025-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "17",
+      "name": "Masala Chai Tea Bags",
+      "description": "Traditional Indian masala chai in convenient tea bags. Perfect blend of spices and tea.",
+      "price": 120,
+      "image": "/placeholder.svg",
+      "category_id": "9",
+      "stock": 60,
+      "created_at": "2025-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "18",
+      "name": "Ghee (Clarified Butter)",
+      "description": "Pure cow ghee made from organic milk. Rich flavor and traditional cooking essential.",
+      "price": 450,
+      "image": "/placeholder.svg",
+      "category_id": "4",
+      "stock": 35,
+      "created_at": "2025-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "19",
+      "name": "Organic Bananas",
+      "description": "Fresh, organic bananas. Rich in potassium and natural sweetness. Perfect for healthy snacking.",
+      "price": 60,
+      "image": "/placeholder.svg",
+      "category_id": "2",
+      "stock": 40,
+      "created_at": "2025-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "20",
+      "name": "Mustard Oil",
+      "description": "Pure mustard oil with strong flavor. Traditional cooking oil for Bengali and North Indian cuisine.",
+      "price": 180,
+      "image": "/placeholder.svg",
+      "category_id": "6",
+      "stock": 50,
+      "created_at": "2025-01-15T10:00:00.000Z"
     }
   ],
   "orders": [
@@ -181,7 +355,7 @@
     {
       "user_id": "1",
       "order_total": 539.9399999999999,
-      "order_status": "pending",
+      "order_status": "shipped",
       "shipping_address": "{\"fullName\":\"Admin User\",\"email\":\"admin@example.com\",\"address\":\"bangalore\",\"city\":\"bangalore\",\"state\":\"karanataka\",\"zipCode\":\"517390\",\"country\":\"United States\"}",
       "payment_method": "Razorpay",
       "order_date": "2025-06-15T17:45:52.392Z",
@@ -194,11 +368,11 @@
     {
       "user_id": "1",
       "order_total": 539.9399999999999,
-      "order_status": "pending",
+      "order_status": "delivered",
       "shipping_address": "{\"fullName\":\"Admin User\",\"email\":\"admin@example.com\",\"address\":\"bangalore\",\"city\":\"bangalore\",\"state\":\"karanataka\",\"zipCode\":\"517390\",\"country\":\"United States\"}",
       "payment_method": "Razorpay",
       "order_date": "2025-06-15T17:45:59.041Z",
-      "tracking_number": "TN09559041",
+      "tracking_number": "Bhargava",
       "estimated_delivery": "2025-06-22T17:45:59.041Z",
       "razorpay_order_id": "",
       "razorpay_payment_id": "",
@@ -384,56 +558,17 @@
       "estimated_delivery": "2025-06-22T19:15:51.957Z",
       "razerpay_order_id": "",
       "razerpay_payment_id": "",
-      "id": "b88fe30d-b9f7-4133-8b30-3f9ca1ba6a0e"
-    },
-    {
-      "user_id": "1",
-      "order_total": 89.99,
-      "order_status": "pending",
-      "shipping_address": "{\"fullName\":\"Admin User\",\"email\":\"admin@example.com\",\"address\":\"bangalore\",\"city\":\"bangalore\",\"state\":\"karanataka\",\"zipCode\":\"517390\",\"country\":\"United States\"}",
-      "payment_method": "Razer Pay",
-      "order_date": "2025-06-15T19:15:52.259Z",
-      "tracking_number": "TN14952259",
-      "estimated_delivery": "2025-06-22T19:15:52.259Z",
-      "razerpay_order_id": "",
-      "razerpay_payment_id": "",
-      "id": "c39df36e-80a2-43a7-957f-bb80c7b1501b"
-    },
-    {
-      "user_id": "1",
-      "order_total": 89.99,
-      "order_status": "pending",
-      "shipping_address": "{\"fullName\":\"Admin User\",\"email\":\"admin@example.com\",\"address\":\"bangalore\",\"city\":\"bangalore\",\"state\":\"karanataka\",\"zipCode\":\"517390\",\"country\":\"United States\"}",
-      "payment_method": "Razer Pay",
-      "order_date": "2025-06-15T19:15:52.628Z",
-      "tracking_number": "TN14952628",
-      "estimated_delivery": "2025-06-22T19:15:52.628Z",
-      "razerpay_order_id": "",
-      "razerpay_payment_id": "",
-      "id": "7e6945c0-36ab-4a62-aeb9-513b072dd398"
-    },
-    {
-      "user_id": "1",
-      "order_total": 89.99,
-      "order_status": "pending",
-      "shipping_address": "{\"fullName\":\"Admin User\",\"email\":\"admin@example.com\",\"address\":\"bangalore\",\"city\":\"bangalore\",\"state\":\"karanataka\",\"zipCode\":\"517390\",\"country\":\"United States\"}",
-      "payment_method": "Razer Pay",
-      "order_date": "2025-06-15T19:15:52.959Z",
-      "tracking_number": "TN14952959",
-      "estimated_delivery": "2025-06-22T19:15:52.959Z",
-      "razerpay_order_id": "",
-      "razerpay_payment_id": "",
       "id": "e89790a4-ace0-4ed3-83a6-c41136bdfc8d"
     },
     {
       "user_id": "1",
       "order_total": 89.99,
-      "order_status": "pending",
+      "order_status": "cancelled",
       "shipping_address": "{\"fullName\":\"Admin User\",\"email\":\"admin@example.com\",\"address\":\"bangalore\",\"city\":\"bangalore\",\"state\":\"karanataka\",\"zipCode\":\"517390\",\"country\":\"United States\"}",
       "payment_method": "Razer Pay",
-      "order_date": "2025-06-15T19:15:53.266Z",
-      "tracking_number": "TN14953266",
-      "estimated_delivery": "2025-06-22T19:15:53.266Z",
+      "order_date": "2025-06-15T19:15:52.259Z",
+      "tracking_number": "TN14952259",
+      "estimated_delivery": "2025-06-22T19:15:52.259Z",
       "razerpay_order_id": "",
       "razerpay_payment_id": "",
       "id": "fe3c4b38-bf98-4f3e-9010-a20bef00b6b6"
@@ -444,9 +579,9 @@
       "order_status": "pending",
       "shipping_address": "{\"fullName\":\"Admin User\",\"email\":\"admin@example.com\",\"address\":\"bangalore\",\"city\":\"bangalore\",\"state\":\"karanataka\",\"zipCode\":\"517390\",\"country\":\"United States\"}",
       "payment_method": "Razer Pay",
-      "order_date": "2025-06-15T19:15:53.613Z",
-      "tracking_number": "TN14953613",
-      "estimated_delivery": "2025-06-22T19:15:53.613Z",
+      "order_date": "2025-06-15T19:15:52.613Z",
+      "tracking_number": "TN14952613",
+      "estimated_delivery": "2025-06-22T19:15:52.613Z",
       "razerpay_order_id": "",
       "razerpay_payment_id": "",
       "id": "0eaade71-364e-4943-9b7a-e7c9a3758863"
@@ -457,9 +592,9 @@
       "order_status": "pending",
       "shipping_address": "{\"fullName\":\"Admin User\",\"email\":\"admin@example.com\",\"address\":\"bangalore\",\"city\":\"bangalore\",\"state\":\"karanataka\",\"zipCode\":\"517390\",\"country\":\"United States\"}",
       "payment_method": "Razer Pay",
-      "order_date": "2025-06-15T19:15:53.867Z",
-      "tracking_number": "TN14953867",
-      "estimated_delivery": "2025-06-22T19:15:53.867Z",
+      "order_date": "2025-06-15T19:15:52.867Z",
+      "tracking_number": "TN14952867",
+      "estimated_delivery": "2025-06-22T19:15:52.867Z",
       "razerpay_order_id": "",
       "razerpay_payment_id": "",
       "id": "a848dc67-18e8-4eb1-917c-15de295cab46"
@@ -660,1004 +795,133 @@
       "id": "3628b47d-da13-4cfc-bcd6-3c7d785d48e4"
     }
   ],
-  "orderItems": [
-    {
-      "id": "1_1",
-      "order_id": "1",
-      "product_id": "5",
-      "product_name": "Product 5",
-      "product_price": 94,
-      "quantity": 1,
-      "product_image": "/placeholder.svg"
-    },
-    {
-      "id": "1_2",
-      "order_id": "1",
-      "product_id": "9",
-      "product_name": "Product 9",
-      "product_price": 55,
-      "quantity": 1,
-      "product_image": "/placeholder.svg"
-    },
-    {
-      "id": "2_1",
-      "order_id": "2",
-      "product_id": "3",
-      "product_name": "Product 3",
-      "product_price": 36,
-      "quantity": 2,
-      "product_image": "/placeholder.svg"
-    },
-    {
-      "id": "2_2",
-      "order_id": "2",
-      "product_id": "6",
-      "product_name": "Product 6",
-      "product_price": 16,
-      "quantity": 2,
-      "product_image": "/placeholder.svg"
-    },
-    {
-      "id": "2_3",
-      "order_id": "2",
-      "product_id": "5",
-      "product_name": "Product 5",
-      "product_price": 94,
-      "quantity": 1,
-      "product_image": "/placeholder.svg"
-    },
-    {
-      "id": "3_1",
-      "order_id": "3",
-      "product_id": "2",
-      "product_name": "Product 2",
-      "product_price": 33,
-      "quantity": 1,
-      "product_image": "/placeholder.svg"
-    },
-    {
-      "id": "3_2",
-      "order_id": "3",
-      "product_id": "1",
-      "product_name": "Product 1",
-      "product_price": 71,
-      "quantity": 2,
-      "product_image": "/placeholder.svg"
-    },
-    {
-      "id": "4_1",
-      "order_id": "4",
-      "product_id": "1",
-      "product_name": "Product 1",
-      "product_price": 71,
-      "quantity": 3,
-      "product_image": "/placeholder.svg"
-    },
-    {
-      "id": "4_2",
-      "order_id": "4",
-      "product_id": "7",
-      "product_name": "Product 7",
-      "product_price": 21,
-      "quantity": 3,
-      "product_image": "/placeholder.svg"
-    },
-    {
-      "id": "4_3",
-      "order_id": "4",
-      "product_id": "5",
-      "product_name": "Product 5",
-      "product_price": 94,
-      "quantity": 3,
-      "product_image": "/placeholder.svg"
-    },
-    {
-      "id": "5_1",
-      "order_id": "5",
-      "product_id": "3",
-      "product_name": "Product 3",
-      "product_price": 36,
-      "quantity": 3,
-      "product_image": "/placeholder.svg"
-    },
-    {
-      "id": "5_2",
-      "order_id": "5",
-      "product_id": "9",
-      "product_name": "Product 9",
-      "product_price": 55,
-      "quantity": 2,
-      "product_image": "/placeholder.svg"
-    },
-    {
-      "order_id": "1",
-      "product_id": "8",
-      "product_name": "Leather Crossbody Bag",
-      "product_price": 89.99,
-      "quantity": 6,
-      "product_image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop",
-      "id": "3773c343-213e-4018-89b3-7ca42c58c9e7"
-    },
-    {
-      "order_id": "1",
-      "product_id": "8",
-      "product_name": "Leather Crossbody Bag",
-      "product_price": 89.99,
-      "quantity": 6,
-      "product_image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop",
-      "id": "da5c028c-377e-48e4-9dac-b6cf006ddd32"
-    },
-    {
-      "order_id": "1",
-      "product_id": "8",
-      "product_name": "Leather Crossbody Bag",
-      "product_price": 89.99,
-      "quantity": 6,
-      "product_image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop",
-      "id": "8d1b97ff-a141-4979-941f-6bf0a215a4ed"
-    },
-    {
-      "order_id": "1",
-      "product_id": "7",
-      "product_name": "Veg Pickle Gongura Pickle",
-      "product_price": 349,
-      "quantity": 4,
-      "product_image": "https://images.unsplash.com/photo-1589927986089-35812388d1f4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MTg3MTl8MHwxfHNlYXJjaHwxfHxBJTIwamFyJTIwb2YlMjBnb25ndXJhJTIwcGlja2xlJTIwd2l0aCUyMGZyZXNoJTIwaW5ncmVkaWVudHMlMjBhbmQlMjB0cmFkaXRpb25hbCUyMHNwaWNlcy58ZW58MHx8fHwxNzQ4NzQ5MTQxfDA&ixlib=rb-4.1.0&q=80&w=200$w=500",
-      "id": "1779f9da-a056-4756-8b04-0d887895bd42"
-    },
-    {
-      "order_id": "1",
-      "product_id": "8",
-      "product_name": "Leather Crossbody Bag",
-      "product_price": 89.99,
-      "quantity": 1,
-      "product_image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop",
-      "id": "51505a29-419c-4c03-a102-104ae4c62593"
-    },
-    {
-      "order_id": "1",
-      "product_id": "8",
-      "product_name": "Leather Crossbody Bag",
-      "product_price": 89.99,
-      "quantity": 1,
-      "product_image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop",
-      "id": "afa9bece-d682-4488-bdbd-ff8f2e5de5c2"
-    },
-    {
-      "order_id": "1",
-      "product_id": "8",
-      "product_name": "Leather Crossbody Bag",
-      "product_price": 89.99,
-      "quantity": 1,
-      "product_image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop",
-      "id": "447b6d5c-534e-463c-b2c8-8d633668b64a"
-    },
-    {
-      "order_id": "1",
-      "product_id": "8",
-      "product_name": "Leather Crossbody Bag",
-      "product_price": 89.99,
-      "quantity": 1,
-      "product_image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop",
-      "id": "25a9992e-fdb6-4a63-9c4e-bcd0163c38f9"
-    },
-    {
-      "order_id": "1",
-      "product_id": "8",
-      "product_name": "Leather Crossbody Bag",
-      "product_price": 89.99,
-      "quantity": 1,
-      "product_image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop",
-      "id": "46cf0a4a-cd00-4d70-b69e-2e7c66e088f5"
-    },
-    {
-      "order_id": "1",
-      "product_id": "8",
-      "product_name": "Leather Crossbody Bag",
-      "product_price": 89.99,
-      "quantity": 1,
-      "product_image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop",
-      "id": "ee5d34df-7d1a-4b26-a427-0f20c587c0a2"
-    },
-    {
-      "order_id": "1",
-      "product_id": "8",
-      "product_name": "Leather Crossbody Bag",
-      "product_price": 89.99,
-      "quantity": 1,
-      "product_image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop",
-      "id": "e779c88f-370a-45bf-9664-7fe8f1ddc081"
-    },
-    {
-      "order_id": "1",
-      "product_id": "8",
-      "product_name": "Leather Crossbody Bag",
-      "product_price": 89.99,
-      "quantity": 1,
-      "product_image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop",
-      "id": "416af4a7-5b81-428f-967e-27c503683485"
-    },
-    {
-      "order_id": "1",
-      "product_id": "8",
-      "product_name": "Leather Crossbody Bag",
-      "product_price": 89.99,
-      "quantity": 1,
-      "product_image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop",
-      "id": "b7917ae2-5e77-42ce-9e34-8abf2724f6c9"
-    },
-    {
-      "order_id": "1",
-      "product_id": "8",
-      "product_name": "Leather Crossbody Bag",
-      "product_price": 89.99,
-      "quantity": 1,
-      "product_image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop",
-      "id": "1b9f8434-0fb4-4d28-8ac6-72b9824b2913"
-    },
-    {
-      "order_id": "1",
-      "product_id": "8",
-      "product_name": "Leather Crossbody Bag",
-      "product_price": 89.99,
-      "quantity": 1,
-      "product_image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop",
-      "id": "1ae84155-390b-4af6-9c7e-fddaf2867611"
-    },
-    {
-      "order_id": "1",
-      "product_id": "8",
-      "product_name": "Leather Crossbody Bag",
-      "product_price": 89.99,
-      "quantity": 1,
-      "product_image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop",
-      "id": "497874fc-92e6-4a3f-90e7-5ebc465eff0e"
-    },
-    {
-      "order_id": "1",
-      "product_id": "8",
-      "product_name": "Leather Crossbody Bag",
-      "product_price": 89.99,
-      "quantity": 1,
-      "product_image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop",
-      "id": "030b4fdd-814a-43af-ab14-0af635afc337"
-    },
-    {
-      "order_id": "1",
-      "product_id": "8",
-      "product_name": "Leather Crossbody Bag",
-      "product_price": 89.99,
-      "quantity": 1,
-      "product_image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop",
-      "id": "f66a5d94-e5f1-499b-bf70-55c901fbea5e"
-    },
-    {
-      "order_id": "1",
-      "product_id": "8",
-      "product_name": "Leather Crossbody Bag",
-      "product_price": 89.99,
-      "quantity": 1,
-      "product_image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop",
-      "id": "b66aed58-0b62-49d4-9e2c-d6d887d61140"
-    },
-    {
-      "order_id": "1",
-      "product_id": "8",
-      "product_name": "Leather Crossbody Bag",
-      "product_price": 89.99,
-      "quantity": 1,
-      "product_image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop",
-      "id": "90b3816c-a7ec-44d5-8334-b28165778ba9"
-    },
-    {
-      "order_id": "1",
-      "product_id": "8",
-      "product_name": "Leather Crossbody Bag",
-      "product_price": 89.99,
-      "quantity": 1,
-      "product_image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop",
-      "id": "652285a6-5212-4b61-902a-855aabd3fa80"
-    },
-    {
-      "order_id": "1",
-      "product_id": "8",
-      "product_name": "Leather Crossbody Bag",
-      "product_price": 89.99,
-      "quantity": 1,
-      "product_image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop",
-      "id": "bad3b48b-d3de-48f1-9edc-86572ee10291"
-    },
-    {
-      "order_id": "1",
-      "product_id": "8",
-      "product_name": "Leather Crossbody Bag",
-      "product_price": 89.99,
-      "quantity": 1,
-      "product_image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop",
-      "id": "37f0b1b6-f199-489d-b5a3-6e0dcf5ed5a5"
-    },
-    {
-      "order_id": "1",
-      "product_id": "8",
-      "product_name": "Leather Crossbody Bag",
-      "product_price": 89.99,
-      "quantity": 1,
-      "product_image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop",
-      "id": "84208477-bc5f-4df8-b5f0-752e55333f4b"
-    },
-    {
-      "order_id": "1",
-      "product_id": "8",
-      "product_name": "Leather Crossbody Bag",
-      "product_price": 89.99,
-      "quantity": 12,
-      "product_image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop",
-      "id": "2e958fe0-baf3-4edd-8795-fc266de8c9b9"
-    },
-    {
-      "order_id": "1",
-      "product_id": "8",
-      "product_name": "Leather Crossbody Bag",
-      "product_price": 89.99,
-      "quantity": 12,
-      "product_image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop",
-      "id": "7dda6a2c-2bd9-46a6-b4df-75c8a7151dfe"
-    },
-    {
-      "order_id": "1",
-      "product_id": "8",
-      "product_name": "Leather Crossbody Bag",
-      "product_price": 89.99,
-      "quantity": 12,
-      "product_image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop",
-      "id": "8ade5038-b5ff-467e-80b5-b7f0301f001c"
-    },
-    {
-      "order_id": "1",
-      "product_id": "8",
-      "product_name": "Leather Crossbody Bag",
-      "product_price": 89.99,
-      "quantity": 12,
-      "product_image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop",
-      "id": "497dcdff-2119-49d0-a33b-d3d8e80cc384"
-    },
-    {
-      "order_id": "1",
-      "product_id": "8",
-      "product_name": "Leather Crossbody Bag",
-      "product_price": 89.99,
-      "quantity": 12,
-      "product_image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop",
-      "id": "e82a7bfa-7814-485a-b2cc-16e99f443f3e"
-    },
-    {
-      "order_id": "1",
-      "product_id": "8",
-      "product_name": "Leather Crossbody Bag",
-      "product_price": 89.99,
-      "quantity": 12,
-      "product_image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop",
-      "id": "763b02c7-9cdf-430c-bfb0-f6778b889018"
-    },
-    {
-      "order_id": "1",
-      "product_id": "8",
-      "product_name": "Leather Crossbody Bag",
-      "product_price": 89.99,
-      "quantity": 12,
-      "product_image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop",
-      "id": "772644e0-93ea-49f6-ad3b-9cd97ea27d7d"
-    },
-    {
-      "order_id": "1",
-      "product_id": "8",
-      "product_name": "Leather Crossbody Bag",
-      "product_price": 89.99,
-      "quantity": 12,
-      "product_image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop",
-      "id": "b2b8e45b-7664-4d61-9367-6b2674147a27"
-    },
-    {
-      "order_id": "1",
-      "product_id": "8",
-      "product_name": "Leather Crossbody Bag",
-      "product_price": 89.99,
-      "quantity": 12,
-      "product_image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop",
-      "id": "5dc08499-12d6-4e01-9444-1f2ff9fea598"
-    },
-    {
-      "order_id": "1",
-      "product_id": "8",
-      "product_name": "Leather Crossbody Bag",
-      "product_price": 89.99,
-      "quantity": 12,
-      "product_image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop",
-      "id": "0455c7ff-f96c-4d0d-b07d-bbceb35dfd37"
-    },
-    {
-      "order_id": "1",
-      "product_id": "8",
-      "product_name": "Leather Crossbody Bag",
-      "product_price": 89.99,
-      "quantity": 12,
-      "product_image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop",
-      "id": "14f7fa98-9c8e-45e4-b5fd-62552dd276ae"
-    },
-    {
-      "order_id": "1",
-      "product_id": "8",
-      "product_name": "Leather Crossbody Bag",
-      "product_price": 89.99,
-      "quantity": 12,
-      "product_image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop",
-      "id": "be1437b1-60ef-4c13-8cd3-649cbc24fd1c"
-    },
-    {
-      "order_id": "1",
-      "product_id": "8",
-      "product_name": "Leather Crossbody Bag",
-      "product_price": 89.99,
-      "quantity": 12,
-      "product_image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop",
-      "id": "83fe7d5d-b50c-4c5c-930b-5943aaf24bbc"
-    }
-  ],
+  "orderItems": [],
   "notifications": [
     {
-      "id": "1",
-      "user_id": "1",
-      "title": "Notification 1",
-      "message": "This is notification 1 message content.",
-      "type": "promotion",
-      "channel": "in_app",
-      "status": "sent",
-      "is_read": true,
-      "metadata": "{\"key\":\"value\"}",
-      "sent_at": "2025-06-11T17:24:50.069Z",
-      "created_at": "2025-06-05T17:24:50.069Z"
-    },
-    {
-      "id": "2",
-      "user_id": "1",
-      "title": "Notification 2",
-      "message": "This is notification 2 message content.",
+      "user_id": "sdfghjkl;",
+      "title": "bhargaca",
+      "message": "adsfghbjnkml,;.'/\n",
       "type": "system",
       "channel": "in_app",
       "status": "sent",
-      "is_read": false,
-      "metadata": "{\"key\":\"value\"}",
-      "sent_at": "2025-06-11T17:24:50.069Z",
-      "created_at": "2025-06-11T17:24:50.069Z"
+      "created_at": "2025-07-05T12:40:45.974Z",
+      "sent_at": "2025-07-05T12:40:45.974Z",
+      "id": "b594e2fc-f692-47e8-a89e-d36333b58311",
+      "is_read": true
     },
     {
-      "id": "3",
       "user_id": "1",
-      "title": "Notification 3",
-      "message": "This is notification 3 message content.",
-      "type": "campaign",
-      "channel": "email",
-      "status": "failed",
-      "is_read": true,
-      "metadata": "{\"key\":\"value\"}",
-      "sent_at": "2025-06-14T17:24:50.070Z",
-      "created_at": "2025-05-18T17:24:50.070Z"
-    },
-    {
-      "id": "4",
-      "user_id": "1",
-      "title": "Notification 4",
-      "message": "This is notification 4 message content.",
-      "type": "order",
-      "channel": "email",
-      "status": "read",
-      "is_read": false,
-      "metadata": "{\"key\":\"value\"}",
-      "sent_at": "2025-06-07T17:24:50.071Z",
-      "created_at": "2025-06-14T17:24:50.071Z"
-    },
-    {
-      "id": "5",
-      "user_id": "1",
-      "title": "Notification 5",
-      "message": "This is notification 5 message content.",
-      "type": "order",
-      "channel": "email",
-      "status": "sent",
-      "is_read": false,
-      "metadata": "{\"key\":\"value\"}",
-      "sent_at": "2025-06-15T17:24:50.071Z",
-      "created_at": "2025-05-17T17:24:50.071Z"
-    },
-    {
-      "id": "6",
-      "user_id": "1",
-      "title": "Notification 6",
-      "message": "This is notification 6 message content.",
-      "type": "system",
-      "channel": "email",
-      "status": "sent",
-      "is_read": true,
-      "metadata": "{\"key\":\"value\"}",
-      "sent_at": "2025-06-06T17:24:50.071Z",
-      "created_at": "2025-05-21T17:24:50.071Z"
-    },
-    {
-      "id": "7",
-      "user_id": "1",
-      "title": "Notification 7",
-      "message": "This is notification 7 message content.",
-      "type": "campaign",
-      "channel": "email",
-      "status": "read",
-      "is_read": true,
-      "metadata": "{\"key\":\"value\"}",
-      "sent_at": "2025-06-10T17:24:50.071Z",
-      "created_at": "2025-05-28T17:24:50.071Z"
-    },
-    {
-      "id": "8",
-      "user_id": "1",
-      "title": "Notification 8",
-      "message": "This is notification 8 message content.",
+      "title": "Item Added to Wishlist",
+      "message": "An item has been added to your wishlist",
       "type": "system",
       "channel": "in_app",
-      "status": "read",
-      "is_read": false,
-      "metadata": "{\"key\":\"value\"}",
-      "sent_at": "2025-06-07T17:24:50.071Z",
-      "created_at": "2025-05-22T17:24:50.071Z"
-    },
-    {
-      "id": "9",
-      "user_id": "1",
-      "title": "Notification 9",
-      "message": "This is notification 9 message content.",
-      "type": "promotion",
-      "channel": "email",
-      "status": "read",
-      "is_read": true,
-      "metadata": "{\"key\":\"value\"}",
-      "sent_at": "2025-06-06T17:24:50.071Z",
-      "created_at": "2025-06-03T17:24:50.071Z"
-    },
-    {
-      "id": "10",
-      "user_id": "1",
-      "title": "Notification 10",
-      "message": "This is notification 10 message content.",
-      "type": "order",
-      "channel": "whatsapp",
-      "status": "failed",
-      "is_read": false,
-      "metadata": "{\"key\":\"value\"}",
-      "sent_at": "2025-06-10T17:24:50.071Z",
-      "created_at": "2025-06-06T17:24:50.071Z"
-    },
-    {
-      "user_id": "1",
-      "title": "Order Confirmed",
-      "message": "Your order #1 has been confirmed and is being processed.",
-      "type": "order",
-      "channel": "in_app",
       "status": "sent",
-      "created_at": "2025-06-15T17:45:52.571Z",
-      "sent_at": "2025-06-15T17:45:52.571Z",
-      "id": "b37dd176-acdd-40c2-b7ac-753daddd885a"
-    },
-    {
-      "user_id": "1",
-      "title": "Order Confirmed",
-      "message": "Your order #1 has been confirmed and is being processed.",
-      "type": "order",
-      "channel": "in_app",
-      "status": "sent",
-      "created_at": "2025-06-15T17:45:59.073Z",
-      "sent_at": "2025-06-15T17:45:59.073Z",
-      "id": "d39549eb-7948-4210-bdac-5ade4c50d685"
-    },
-    {
-      "user_id": "1",
-      "title": "Order Confirmed",
-      "message": "Your order #1 has been confirmed and is being processed.",
-      "type": "order",
-      "channel": "in_app",
-      "status": "sent",
-      "created_at": "2025-06-15T17:47:26.874Z",
-      "sent_at": "2025-06-15T17:47:26.874Z",
-      "id": "2f92586c-6dad-4cdd-841e-be279132a4b8"
-    },
-    {
-      "user_id": "1",
-      "title": "Order Confirmed",
-      "message": "Your order #1 has been confirmed and is being processed.",
-      "type": "order",
-      "channel": "in_app",
-      "status": "sent",
-      "created_at": "2025-06-15T19:02:58.029Z",
-      "sent_at": "2025-06-15T19:02:58.029Z",
-      "id": "2f4476a7-25c3-4cd1-b347-3592055f61a6"
-    },
-    {
-      "user_id": "1",
-      "title": "Order Confirmed",
-      "message": "Your order #1 has been confirmed and is being processed.",
-      "type": "order",
-      "channel": "in_app",
-      "status": "sent",
-      "created_at": "2025-06-15T19:15:45.575Z",
-      "sent_at": "2025-06-15T19:15:45.575Z",
-      "id": "e2532dd1-a870-4188-830f-99a02f61854e"
-    },
-    {
-      "user_id": "1",
-      "title": "Order Confirmed",
-      "message": "Your order #1 has been confirmed and is being processed.",
-      "type": "order",
-      "channel": "in_app",
-      "status": "sent",
-      "created_at": "2025-06-15T19:15:47.311Z",
-      "sent_at": "2025-06-15T19:15:47.311Z",
-      "id": "7e5cb464-c855-4ac3-bff1-258d48672f97"
-    },
-    {
-      "user_id": "1",
-      "title": "Order Confirmed",
-      "message": "Your order #1 has been confirmed and is being processed.",
-      "type": "order",
-      "channel": "in_app",
-      "status": "sent",
-      "created_at": "2025-06-15T19:15:48.148Z",
-      "sent_at": "2025-06-15T19:15:48.148Z",
-      "id": "3e62eff4-4bc6-4557-bfc5-2d1665366d53"
-    },
-    {
-      "user_id": "1",
-      "title": "Order Confirmed",
-      "message": "Your order #1 has been confirmed and is being processed.",
-      "type": "order",
-      "channel": "in_app",
-      "status": "sent",
-      "created_at": "2025-06-15T19:15:49.090Z",
-      "sent_at": "2025-06-15T19:15:49.090Z",
-      "id": "6f00b899-3acf-4d30-8486-ad8522ebac9f"
-    },
-    {
-      "user_id": "1",
-      "title": "Order Confirmed",
-      "message": "Your order #1 has been confirmed and is being processed.",
-      "type": "order",
-      "channel": "in_app",
-      "status": "sent",
-      "created_at": "2025-06-15T19:15:49.620Z",
-      "sent_at": "2025-06-15T19:15:49.620Z",
-      "id": "bfd23bf1-bed7-4bd7-b056-324308a8cd49"
-    },
-    {
-      "user_id": "1",
-      "title": "Order Confirmed",
-      "message": "Your order #1 has been confirmed and is being processed.",
-      "type": "order",
-      "channel": "in_app",
-      "status": "sent",
-      "created_at": "2025-06-15T19:15:50.069Z",
-      "sent_at": "2025-06-15T19:15:50.069Z",
-      "id": "3620132f-e307-4180-aec5-190594fd193e"
-    },
-    {
-      "user_id": "1",
-      "title": "Order Confirmed",
-      "message": "Your order #1 has been confirmed and is being processed.",
-      "type": "order",
-      "channel": "in_app",
-      "status": "sent",
-      "created_at": "2025-06-15T19:15:50.422Z",
-      "sent_at": "2025-06-15T19:15:50.422Z",
-      "id": "6bff85f5-7064-445b-85fe-1cb265d0fd13"
-    },
-    {
-      "user_id": "1",
-      "title": "Order Confirmed",
-      "message": "Your order #1 has been confirmed and is being processed.",
-      "type": "order",
-      "channel": "in_app",
-      "status": "sent",
-      "created_at": "2025-06-15T19:15:50.750Z",
-      "sent_at": "2025-06-15T19:15:50.750Z",
-      "id": "e5125f18-2df9-458d-bbc1-c92aa7d4a5d7"
-    },
-    {
-      "user_id": "1",
-      "title": "Order Confirmed",
-      "message": "Your order #1 has been confirmed and is being processed.",
-      "type": "order",
-      "channel": "in_app",
-      "status": "sent",
-      "created_at": "2025-06-15T19:15:51.054Z",
-      "sent_at": "2025-06-15T19:15:51.055Z",
-      "id": "af5c2163-8a73-4937-9a5d-5e16a54d67f0"
-    },
-    {
-      "user_id": "1",
-      "title": "Order Confirmed",
-      "message": "Your order #1 has been confirmed and is being processed.",
-      "type": "order",
-      "channel": "in_app",
-      "status": "sent",
-      "created_at": "2025-06-15T19:15:51.344Z",
-      "sent_at": "2025-06-15T19:15:51.344Z",
-      "id": "c0e73690-530d-48b4-b2e3-e258c6cc863c"
-    },
-    {
-      "user_id": "1",
-      "title": "Order Confirmed",
-      "message": "Your order #1 has been confirmed and is being processed.",
-      "type": "order",
-      "channel": "in_app",
-      "status": "sent",
-      "created_at": "2025-06-15T19:15:51.653Z",
-      "sent_at": "2025-06-15T19:15:51.653Z",
-      "id": "c6161dcf-9c4d-4a4f-9a4f-f120a76462e0"
-    },
-    {
-      "user_id": "1",
-      "title": "Order Confirmed",
-      "message": "Your order #1 has been confirmed and is being processed.",
-      "type": "order",
-      "channel": "in_app",
-      "status": "sent",
-      "created_at": "2025-06-15T19:15:51.979Z",
-      "sent_at": "2025-06-15T19:15:51.979Z",
-      "id": "636a6bf8-abdc-44e3-bd46-c2c95754d95c"
-    },
-    {
-      "user_id": "1",
-      "title": "Order Confirmed",
-      "message": "Your order #1 has been confirmed and is being processed.",
-      "type": "order",
-      "channel": "in_app",
-      "status": "sent",
-      "created_at": "2025-06-15T19:15:52.286Z",
-      "sent_at": "2025-06-15T19:15:52.286Z",
-      "id": "76999e0c-0969-4d04-9703-50c1692e1ab6"
-    },
-    {
-      "user_id": "1",
-      "title": "Order Confirmed",
-      "message": "Your order #1 has been confirmed and is being processed.",
-      "type": "order",
-      "channel": "in_app",
-      "status": "sent",
-      "created_at": "2025-06-15T19:15:52.653Z",
-      "sent_at": "2025-06-15T19:15:52.653Z",
-      "id": "dbe6016d-e9d5-49bc-baaf-b9792ca23bc3"
-    },
-    {
-      "user_id": "1",
-      "title": "Order Confirmed",
-      "message": "Your order #1 has been confirmed and is being processed.",
-      "type": "order",
-      "channel": "in_app",
-      "status": "sent",
-      "created_at": "2025-06-15T19:15:52.982Z",
-      "sent_at": "2025-06-15T19:15:52.982Z",
-      "id": "fe89e5da-e76a-4b3f-98a9-4152809881b6"
-    },
-    {
-      "user_id": "1",
-      "title": "Order Confirmed",
-      "message": "Your order #1 has been confirmed and is being processed.",
-      "type": "order",
-      "channel": "in_app",
-      "status": "sent",
-      "created_at": "2025-06-15T19:15:53.284Z",
-      "sent_at": "2025-06-15T19:15:53.284Z",
-      "id": "4764e172-fe92-4555-b34c-0413786c2db3"
-    },
-    {
-      "user_id": "1",
-      "title": "Order Confirmed",
-      "message": "Your order #1 has been confirmed and is being processed.",
-      "type": "order",
-      "channel": "in_app",
-      "status": "sent",
-      "created_at": "2025-06-15T19:15:53.632Z",
-      "sent_at": "2025-06-15T19:15:53.632Z",
-      "id": "8c2b7244-1883-4f85-9df6-65d3b661d6c2"
-    },
-    {
-      "user_id": "1",
-      "title": "Order Confirmed",
-      "message": "Your order #1 has been confirmed and is being processed.",
-      "type": "order",
-      "channel": "in_app",
-      "status": "sent",
-      "created_at": "2025-06-15T19:15:53.887Z",
-      "sent_at": "2025-06-15T19:15:53.887Z",
-      "id": "86140444-1bf8-46ea-99c1-5ff438a92f8a"
-    },
-    {
-      "user_id": "1",
-      "title": "Order Confirmed",
-      "message": "Your order #1 has been confirmed and is being processed.",
-      "type": "order",
-      "channel": "in_app",
-      "status": "sent",
-      "created_at": "2025-06-15T19:15:54.296Z",
-      "sent_at": "2025-06-15T19:15:54.296Z",
-      "id": "474bc309-8045-4276-a19c-8a35bb85b3fe"
-    },
-    {
-      "user_id": "1",
-      "title": "Order Confirmed",
-      "message": "Your order #1 has been confirmed and is being processed.",
-      "type": "order",
-      "channel": "in_app",
-      "status": "sent",
-      "created_at": "2025-06-15T19:15:54.641Z",
-      "sent_at": "2025-06-15T19:15:54.641Z",
-      "id": "2b39fb89-6f28-4a0d-8a0a-17aca4d32488"
-    },
-    {
-      "user_id": "1",
-      "title": "Order Confirmed",
-      "message": "Your order #1 has been confirmed and is being processed.",
-      "type": "order",
-      "channel": "in_app",
-      "status": "sent",
-      "created_at": "2025-06-15T19:56:19.461Z",
-      "sent_at": "2025-06-15T19:56:19.461Z",
-      "id": "b756d16c-04a0-4a49-a4b7-ab33bdcaba54"
-    },
-    {
-      "user_id": "1",
-      "title": "Order Confirmed",
-      "message": "Your order #1 has been confirmed and is being processed.",
-      "type": "order",
-      "channel": "in_app",
-      "status": "sent",
-      "created_at": "2025-06-15T19:56:20.513Z",
-      "sent_at": "2025-06-15T19:56:20.513Z",
-      "id": "188897b3-2ca2-4033-957f-62c3190c9ec5"
-    },
-    {
-      "user_id": "1",
-      "title": "Order Confirmed",
-      "message": "Your order #1 has been confirmed and is being processed.",
-      "type": "order",
-      "channel": "in_app",
-      "status": "sent",
-      "created_at": "2025-06-15T19:56:22.180Z",
-      "sent_at": "2025-06-15T19:56:22.180Z",
-      "id": "e5564b94-7017-49e5-9c7c-a654b5752604"
-    },
-    {
-      "user_id": "1",
-      "title": "Order Confirmed",
-      "message": "Your order #1 has been confirmed and is being processed.",
-      "type": "order",
-      "channel": "in_app",
-      "status": "sent",
-      "created_at": "2025-06-15T19:56:22.374Z",
-      "sent_at": "2025-06-15T19:56:22.374Z",
-      "id": "4a0599e2-46d5-47dd-a741-9935d76fd868"
-    },
-    {
-      "user_id": "1",
-      "title": "Order Confirmed",
-      "message": "Your order #1 has been confirmed and is being processed.",
-      "type": "order",
-      "channel": "in_app",
-      "status": "sent",
-      "created_at": "2025-06-15T19:56:22.590Z",
-      "sent_at": "2025-06-15T19:56:22.590Z",
-      "id": "7dbef4f1-9829-4a76-a4e4-95d6cc17cc40"
-    },
-    {
-      "user_id": "1",
-      "title": "Order Confirmed",
-      "message": "Your order #1 has been confirmed and is being processed.",
-      "type": "order",
-      "channel": "in_app",
-      "status": "sent",
-      "created_at": "2025-06-15T19:56:22.741Z",
-      "sent_at": "2025-06-15T19:56:22.741Z",
-      "id": "b64628b2-ac42-4a14-aa7e-bb6136d946a1"
-    },
-    {
-      "user_id": "1",
-      "title": "Order Confirmed",
-      "message": "Your order #1 has been confirmed and is being processed.",
-      "type": "order",
-      "channel": "in_app",
-      "status": "sent",
-      "created_at": "2025-06-15T19:56:22.924Z",
-      "sent_at": "2025-06-15T19:56:22.924Z",
-      "id": "64f81811-eb62-4282-88e8-18f60588a9b6"
-    },
-    {
-      "user_id": "1",
-      "title": "Order Confirmed",
-      "message": "Your order #1 has been confirmed and is being processed.",
-      "type": "order",
-      "channel": "in_app",
-      "status": "sent",
-      "created_at": "2025-06-15T19:56:23.086Z",
-      "sent_at": "2025-06-15T19:56:23.086Z",
-      "id": "9108d626-89b7-4ba0-be96-3fc988a9fc59"
-    },
-    {
-      "user_id": "1",
-      "title": "Order Confirmed",
-      "message": "Your order #1 has been confirmed and is being processed.",
-      "type": "order",
-      "channel": "in_app",
-      "status": "sent",
-      "created_at": "2025-06-15T19:56:23.270Z",
-      "sent_at": "2025-06-15T19:56:23.270Z",
-      "id": "2d6975a1-d712-498a-86de-4938bf5339bd"
-    },
-    {
-      "user_id": "1",
-      "title": "Order Confirmed",
-      "message": "Your order #1 has been confirmed and is being processed.",
-      "type": "order",
-      "channel": "in_app",
-      "status": "sent",
-      "created_at": "2025-06-15T19:56:23.595Z",
-      "sent_at": "2025-06-15T19:56:23.595Z",
-      "id": "e51c555f-7a7f-4f72-870f-c769509d9fe6"
-    },
-    {
-      "user_id": "1",
-      "title": "Order Confirmed",
-      "message": "Your order #1 has been confirmed and is being processed.",
-      "type": "order",
-      "channel": "in_app",
-      "status": "sent",
-      "created_at": "2025-06-15T19:56:23.819Z",
-      "sent_at": "2025-06-15T19:56:23.819Z",
-      "id": "2ed80176-a3f7-40a4-8bbf-c7a94c911e73"
-    },
-    {
-      "user_id": "1",
-      "title": "Order Confirmed",
-      "message": "Your order #1 has been confirmed and is being processed.",
-      "type": "order",
-      "channel": "in_app",
-      "status": "sent",
-      "created_at": "2025-06-15T19:56:24.114Z",
-      "sent_at": "2025-06-15T19:56:24.114Z",
-      "id": "30e32a34-d49f-43ec-98ea-71794cde3a06"
-    },
-    {
-      "user_id": "1",
-      "title": "Order Confirmed",
-      "message": "Your order #1 has been confirmed and is being processed.",
-      "type": "order",
-      "channel": "in_app",
-      "status": "sent",
-      "created_at": "2025-06-15T19:56:24.317Z",
-      "sent_at": "2025-06-15T19:56:24.317Z",
-      "id": "f5d6aa3c-4cfc-443a-b277-cbc0f73422f1"
+      "created_at": "2025-07-05T21:07:40.180Z",
+      "sent_at": "2025-07-05T21:07:40.180Z",
+      "id": "ba053792-3b74-4110-b527-edbb3fc572b3"
     }
   ],
   "categories": [
     {
       "id": "1",
-      "name": "Category 1",
-      "description": "Description for Category 1"
+      "name": "Grains & Cereals",
+      "description": "Rice, wheat, quinoa and other grains"
     },
     {
       "id": "2",
-      "name": "Category 2",
-      "description": "Description for Category 2"
+      "name": "Fruits",
+      "description": "Fresh seasonal fruits"
     },
     {
       "id": "3",
-      "name": "Category 3",
-      "description": "Description for Category 3"
+      "name": "Vegetables",
+      "description": "Fresh organic vegetables"
+    },
+    {
+      "id": "4",
+      "name": "Dairy Products",
+      "description": "Milk, paneer, ghee and dairy items"
+    },
+    {
+      "id": "5",
+      "name": "Spices & Seasonings",
+      "description": "Traditional spices and masalas"
+    },
+    {
+      "id": "6",
+      "name": "Oils & Fats",
+      "description": "Cooking oils and healthy fats"
+    },
+    {
+      "id": "7",
+      "name": "Pulses & Legumes",
+      "description": "Lentils, beans and legumes"
+    },
+    {
+      "id": "8",
+      "name": "Nuts & Dry Fruits",
+      "description": "Premium nuts and dried fruits"
+    },
+    {
+      "id": "9",
+      "name": "Beverages",
+      "description": "Tea, coffee and healthy drinks"
+    },
+    {
+      "id": "10",
+      "name": "Natural Sweeteners",
+      "description": "Honey, jaggery and natural sweeteners"
+    },
+    {
+      "id": "11",
+      "name": "Meat & Poultry",
+      "description": "Fresh meat and poultry products"
+    },
+    {
+      "id": "12",
+      "name": "Seafood",
+      "description": "Fresh fish and seafood"
     }
   ],
-  "campaigns": []
+  "campaigns": [],
+  "wishlist": [
+    {
+      "user_id": "1",
+      "product_id": "9",
+      "added_date": "2025-07-05T21:07:40.161Z",
+      "id": "914fb3b6-8055-4b2f-8d12-6084b4d7b069"
+    }
+  ],
+  "reviews": [],
+  "whatsapp": [],
+  "banners": [
+    {
+      "id": 1,
+      "title": "Summer Sale",
+      "subtitle": "Up to 59% Off Pickles",
+      "description": "Limited time offer on premium Products",
+      "image": "https://www.amaravathipickles.com/wp-content/uploads/2019/01/chicken-pickle-in-hyderabad.png",
+      "cta": "Pickles Shop",
+      "link": "/products?category=Electronics"
+    },
+    {
+      "id": 2,
+      "title": "New Collection",
+      "subtitle": "Nati Styles Pickles",
+      "description": "Discover the latest trends in Pickles ",
+      "image": "https://5.imimg.com/data5/SELLER/Default/2022/3/QY/IR/AM/33290846/south-indian-chicken-pickle-1000x1000.jpg",
+      "cta": "Pickles Shop",
+      "link": "/products?category=Fashion"
+    },
+    {
+      "id": 3,
+      "title": "Smart Home",
+      "subtitle": "Transform Your Living Space",
+      "description": "Innovative solutions for modern homes",
+      "image": "https://m.media-amazon.com/images/I/717cb77+qUL.jpg",
+      "cta": "Shop Home & Kitchen",
+      "link": "/products?category=Home%20%26%20Kitchen"
+    }
+  ],
+  "order_items": []
 }

@@ -62,37 +62,37 @@ const ProductSearch: React.FC<ProductSearchProps> = ({ onFiltersChange, totalRes
   filters.inStock;
 
   return (
-    <div className="space-y-4" data-id="pc9dotglj" data-path="src/components/ProductSearch.tsx">
+    <div className="space-y-4">
       {/* Search Bar */}
-      <div className="flex flex-col sm:flex-row gap-4" data-id="hi7cg06ez" data-path="src/components/ProductSearch.tsx">
-        <div className="relative flex-1" data-id="c59fojreg" data-path="src/components/ProductSearch.tsx">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" data-id="kdrcwj82z" data-path="src/components/ProductSearch.tsx" />
+      <div className="flex flex-col sm:flex-row gap-4">
+        <div className="relative flex-1">
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
           <Input
             placeholder="Search products..."
             value={filters.query}
             onChange={(e) => updateFilters({ query: e.target.value })}
-            className="pl-10" data-id="1leoh48hs" data-path="src/components/ProductSearch.tsx" />
+            className="pl-10" />
 
         </div>
         
-        <div className="flex gap-2" data-id="kl238e9tz" data-path="src/components/ProductSearch.tsx">
+        <div className="flex gap-2">
           <Button
             variant="outline"
             onClick={() => setShowFilters(!showFilters)}
-            className="flex items-center gap-2" data-id="6kzrypnm0" data-path="src/components/ProductSearch.tsx">
+            className="flex items-center gap-2">
 
-            <Filter className="w-4 h-4" data-id="0ngtg2kph" data-path="src/components/ProductSearch.tsx" />
+            <Filter className="w-4 h-4" />
             Filters
             {hasActiveFilters &&
-            <Badge variant="secondary" className="ml-1" data-id="q92zyuw2j" data-path="src/components/ProductSearch.tsx">
+            <Badge variant="secondary" className="ml-1">
                 Active
               </Badge>
             }
           </Button>
           
           {hasActiveFilters &&
-          <Button variant="outline" onClick={clearFilters} data-id="3w610kxgj" data-path="src/components/ProductSearch.tsx">
-              <X className="w-4 h-4 mr-2" data-id="t8cucgvmm" data-path="src/components/ProductSearch.tsx" />
+          <Button variant="outline" onClick={clearFilters}>
+              <X className="w-4 h-4 mr-2" />
               Clear
             </Button>
           }
@@ -100,7 +100,7 @@ const ProductSearch: React.FC<ProductSearchProps> = ({ onFiltersChange, totalRes
       </div>
 
       {/* Results Count */}
-      <div className="text-sm text-gray-600" data-id="83l5t38iv" data-path="src/components/ProductSearch.tsx">
+      <div className="text-sm text-gray-600">
         {totalResults} product{totalResults !== 1 ? 's' : ''} found
       </div>
 
@@ -224,51 +224,51 @@ const ProductSearch: React.FC<ProductSearchProps> = ({ onFiltersChange, totalRes
       {hasActiveFilters &&
       <div className="flex flex-wrap gap-1 sm:gap-2">
           {filters.query &&
-        <Badge variant="secondary" className="flex items-center gap-1" data-id="qj4l78yf1" data-path="src/components/ProductSearch.tsx">
+        <Badge variant="secondary" className="flex items-center gap-1">
               Search: "{filters.query}"
               <X
             className="w-3 h-3 cursor-pointer"
-            onClick={() => updateFilters({ query: '' })} data-id="v36k9kxpe" data-path="src/components/ProductSearch.tsx" />
+            onClick={() => updateFilters({ query: '' })} />
 
             </Badge>
         }
           
           {filters.category !== 'All' &&
-        <Badge variant="secondary" className="flex items-center gap-1" data-id="7wy4zjigy" data-path="src/components/ProductSearch.tsx">
+        <Badge variant="secondary" className="flex items-center gap-1">
               Category: {filters.category}
               <X
             className="w-3 h-3 cursor-pointer"
-            onClick={() => updateFilters({ category: 'All' })} data-id="r152hvt8c" data-path="src/components/ProductSearch.tsx" />
+            onClick={() => updateFilters({ category: 'All' })} />
 
             </Badge>
         }
           
           {(filters.priceRange[0] > 0 || filters.priceRange[1] < 2000) &&
-        <Badge variant="secondary" className="flex items-center gap-1" data-id="zlq04tt85" data-path="src/components/ProductSearch.tsx">
+        <Badge variant="secondary" className="flex items-center gap-1">
               Price: ${filters.priceRange[0]} - ${filters.priceRange[1]}
               <X
             className="w-3 h-3 cursor-pointer"
-            onClick={() => updateFilters({ priceRange: [0, 2000] })} data-id="1jukofoy6" data-path="src/components/ProductSearch.tsx" />
+            onClick={() => updateFilters({ priceRange: [0, 2000] })} />
 
             </Badge>
         }
           
           {filters.minRating > 0 &&
-        <Badge variant="secondary" className="flex items-center gap-1" data-id="gtmjk8mqj" data-path="src/components/ProductSearch.tsx">
+        <Badge variant="secondary" className="flex items-center gap-1">
               {filters.minRating}+ stars
               <X
             className="w-3 h-3 cursor-pointer"
-            onClick={() => updateFilters({ minRating: 0 })} data-id="minfq26uc" data-path="src/components/ProductSearch.tsx" />
+            onClick={() => updateFilters({ minRating: 0 })} />
 
             </Badge>
         }
           
           {filters.inStock &&
-        <Badge variant="secondary" className="flex items-center gap-1" data-id="wv1z5iz5k" data-path="src/components/ProductSearch.tsx">
+        <Badge variant="secondary" className="flex items-center gap-1">
               In stock only
               <X
             className="w-3 h-3 cursor-pointer"
-            onClick={() => updateFilters({ inStock: false })} data-id="anyzv4oz4" data-path="src/components/ProductSearch.tsx" />
+            onClick={() => updateFilters({ inStock: false })} />
 
             </Badge>
         }

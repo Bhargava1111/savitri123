@@ -33,3 +33,4 @@ interface Window {
   Razorpay: Razorpay;
   ezsite: any; // Assuming ezsite is globally available
 }
+

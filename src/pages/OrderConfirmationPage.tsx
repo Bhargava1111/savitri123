@@ -6,6 +6,7 @@ import { Separator } from '@/components/ui/separator';
 import { CheckCircle, Package, Truck, Mail, ArrowRight, Loader2 } from 'lucide-react';
 import { OrderService, Order, OrderItem } from '../services/OrderService'; // Import OrderService and types
 import { useToast } from '@/hooks/use-toast';
+import { format, formatDistanceToNow } from 'date-fns';
 
 const OrderConfirmationPage: React.FC = () => {
   const { orderId } = useParams<{ orderId: string }>();
@@ -120,7 +121,14 @@ const OrderConfirmationPage: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-sm font-medium text-gray-600">Order Date</p>
-                    <p className="text-lg font-semibold text-gray-900">{new Date(order.order_date).toLocaleDateString()}</p>
+                    <p className="text-lg font-semibold text-gray-900">
+                      {order.order_date ? (
+                        <>
+                          {format(new Date(order.order_date), 'MMM d, yyyy, h:mm a')}
+                          <span className="block text-xs text-gray-500">{formatDistanceToNow(new Date(order.order_date), { addSuffix: true })}</span>
+                        </>
+                      ) : 'N/A'}
+                    </p>
                   </div>
                   <div>
                     <p className="text-sm font-medium text-gray-600">Status</p>
@@ -136,7 +144,14 @@ const OrderConfirmationPage: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-sm font-medium text-gray-600">Estimated Delivery</p>
-                    <p className="text-lg font-semibold text-gray-900">{new Date(order.estimated_delivery).toLocaleDateString()}</p>
+                    <p className="text-lg font-semibold text-gray-900">
+                      {order.estimated_delivery ? (
+                        <>
+                          {format(new Date(order.estimated_delivery), 'MMM d, yyyy, h:mm a')}
+                          <span className="block text-xs text-gray-500">{formatDistanceToNow(new Date(order.estimated_delivery), { addSuffix: true })}</span>
+                        </>
+                      ) : 'N/A'}
+                    </p>
                   </div>
                   {order.tracking_number && (
                     <div>
@@ -328,3 +343,4 @@ const OrderConfirmationPage: React.FC = () => {
 };
 
 export default OrderConfirmationPage;
+

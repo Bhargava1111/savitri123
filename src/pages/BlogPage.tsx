@@ -110,49 +110,49 @@ const BlogPage: React.FC = () => {
 
   if (selectedPost) {
     return (
-      <div className="min-h-screen bg-gray-50 py-8" data-id="eie3bw9n1" data-path="src/pages/BlogPage.tsx">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8" data-id="a5ipi6fdo" data-path="src/pages/BlogPage.tsx">
+      <div className="min-h-screen bg-gray-50 py-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Button
             variant="outline"
             onClick={() => setSelectedPost(null)}
-            className="mb-6" data-id="hgpth8hhu" data-path="src/pages/BlogPage.tsx">
+            className="mb-6">
 
             ← Back to Blog
           </Button>
           
-          <article className="bg-white rounded-lg shadow-md overflow-hidden" data-id="haiilwqpu" data-path="src/pages/BlogPage.tsx">
+          <article className="bg-white rounded-lg shadow-md overflow-hidden">
             <img
               src={selectedPost.image}
               alt={selectedPost.title}
-              className="w-full h-64 md:h-96 object-cover" data-id="ow643m6nd" data-path="src/pages/BlogPage.tsx" />
+              className="w-full h-64 md:h-96 object-cover" />
 
             
-            <div className="p-8" data-id="zjz57y1we" data-path="src/pages/BlogPage.tsx">
-              <div className="flex items-center gap-4 mb-4" data-id="4jqufqrsp" data-path="src/pages/BlogPage.tsx">
-                <Badge variant="secondary" data-id="49xrrn98b" data-path="src/pages/BlogPage.tsx">{selectedPost.category}</Badge>
-                <div className="flex items-center text-sm text-gray-600" data-id="7tidp6m5p" data-path="src/pages/BlogPage.tsx">
-                  <User className="w-4 h-4 mr-1" data-id="76238cjov" data-path="src/pages/BlogPage.tsx" />
+            <div className="p-8">
+              <div className="flex items-center gap-4 mb-4">
+                <Badge variant="secondary">{selectedPost.category}</Badge>
+                <div className="flex items-center text-sm text-gray-600">
+                  <User className="w-4 h-4 mr-1" />
                   {selectedPost.author}
                 </div>
-                <div className="flex items-center text-sm text-gray-600" data-id="lb1a41pxs" data-path="src/pages/BlogPage.tsx">
-                  <Calendar className="w-4 h-4 mr-1" data-id="e6qjwshxw" data-path="src/pages/BlogPage.tsx" />
+                <div className="flex items-center text-sm text-gray-600">
+                  <Calendar className="w-4 h-4 mr-1" />
                   {new Date(selectedPost.date).toLocaleDateString()}
                 </div>
-                <div className="flex items-center text-sm text-gray-600" data-id="kb9aktdm4" data-path="src/pages/BlogPage.tsx">
-                  <Clock className="w-4 h-4 mr-1" data-id="nmhu23sjx" data-path="src/pages/BlogPage.tsx" />
+                <div className="flex items-center text-sm text-gray-600">
+                  <Clock className="w-4 h-4 mr-1" />
                   {selectedPost.readTime}
                 </div>
               </div>
               
-              <h1 className="text-3xl font-bold text-gray-900 mb-6" data-id="ejye566tz" data-path="src/pages/BlogPage.tsx">
+              <h1 className="text-3xl font-bold text-gray-900 mb-6">
                 {selectedPost.title}
               </h1>
               
-              <div className="prose max-w-none" data-id="9z4lg9yso" data-path="src/pages/BlogPage.tsx">
-                <p className="text-lg text-gray-700 mb-6" data-id="kwegcj4ub" data-path="src/pages/BlogPage.tsx">
+              <div className="prose max-w-none">
+                <p className="text-lg text-gray-700 mb-6">
                   {selectedPost.excerpt}
                 </p>
-                <p className="text-gray-700" data-id="l0zpkmd3k" data-path="src/pages/BlogPage.tsx">
+                <p className="text-gray-700">
                   {selectedPost.content} Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                   Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad 
                   minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
@@ -161,11 +161,11 @@ const BlogPage: React.FC = () => {
                 </p>
               </div>
               
-              <div className="mt-8 pt-6 border-t border-gray-200" data-id="61hhc7lng" data-path="src/pages/BlogPage.tsx">
-                <h3 className="text-sm font-semibold text-gray-900 mb-2" data-id="nlz4nia17" data-path="src/pages/BlogPage.tsx">Tags:</h3>
-                <div className="flex flex-wrap gap-2" data-id="rk5nxce3n" data-path="src/pages/BlogPage.tsx">
+              <div className="mt-8 pt-6 border-t border-gray-200">
+                <h3 className="text-sm font-semibold text-gray-900 mb-2">Tags:</h3>
+                <div className="flex flex-wrap gap-2">
                   {selectedPost.tags.map((tag) =>
-                  <Badge key={tag} variant="outline" className="text-xs" data-id="rrtesbuqq" data-path="src/pages/BlogPage.tsx">
+                  <Badge key={tag} variant="outline" className="text-xs">
                       {tag}
                     </Badge>
                   )}
@@ -179,40 +179,40 @@ const BlogPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8" data-id="c903affef" data-path="src/pages/BlogPage.tsx">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-id="kw3c5s99u" data-path="src/pages/BlogPage.tsx">
+    <div className="min-h-screen bg-gray-50 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-12" data-id="an8jhtpbz" data-path="src/pages/BlogPage.tsx">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4" data-id="wlv6x27au" data-path="src/pages/BlogPage.tsx">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Our Blog
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto" data-id="wsdkg03x4" data-path="src/pages/BlogPage.tsx">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Stay updated with the latest trends, tips, and insights in e-commerce and technology.
           </p>
         </div>
 
         {/* Search and Filters */}
-        <div className="mb-8" data-id="ycqrdmve5" data-path="src/pages/BlogPage.tsx">
-          <div className="flex flex-col md:flex-row gap-4 mb-6" data-id="gxjuoe5av" data-path="src/pages/BlogPage.tsx">
-            <div className="relative flex-1" data-id="jioz5i325" data-path="src/pages/BlogPage.tsx">
-              <Search className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" data-id="562qcyh47" data-path="src/pages/BlogPage.tsx" />
+        <div className="mb-8">
+          <div className="flex flex-col md:flex-row gap-4 mb-6">
+            <div className="relative flex-1">
+              <Search className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
               <Input
                 type="text"
                 placeholder="Search blog posts..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10" data-id="uoze9xzca" data-path="src/pages/BlogPage.tsx" />
+                className="pl-10" />
 
             </div>
           </div>
           
-          <div className="flex flex-wrap gap-2" data-id="5au5q2lbv" data-path="src/pages/BlogPage.tsx">
+          <div className="flex flex-wrap gap-2">
             {categories.map((category) =>
             <Button
               key={category}
               variant={selectedCategory === category ? "default" : "outline"}
               size="sm"
-              onClick={() => setSelectedCategory(category)} data-id="wwh1zv11p" data-path="src/pages/BlogPage.tsx">
+              onClick={() => setSelectedCategory(category)}>
 
                 {category}
               </Button>
@@ -221,47 +221,47 @@ const BlogPage: React.FC = () => {
         </div>
 
         {/* Blog Posts Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-id="jamo7pumf" data-path="src/pages/BlogPage.tsx">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredPosts.map((post) =>
-          <Card key={post.id} className="group cursor-pointer hover:shadow-lg transition-shadow" data-id="2j9dorfq7" data-path="src/pages/BlogPage.tsx">
-              <div className="relative overflow-hidden rounded-t-lg" data-id="0idqsdq6i" data-path="src/pages/BlogPage.tsx">
+          <Card key={post.id} className="group cursor-pointer hover:shadow-lg transition-shadow">
+              <div className="relative overflow-hidden rounded-t-lg">
                 <img
                 src={post.image}
                 alt={post.title}
-                className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" data-id="hm0c18cuq" data-path="src/pages/BlogPage.tsx" />
+                className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
 
                 <Badge
                 className="absolute top-4 left-4 bg-white text-gray-900"
-                variant="secondary" data-id="uk5d90dlp" data-path="src/pages/BlogPage.tsx">
+                variant="secondary">
 
                   {post.category}
                 </Badge>
               </div>
               
-              <CardHeader data-id="4a3he5buf" data-path="src/pages/BlogPage.tsx">
-                <div className="flex items-center gap-4 text-sm text-gray-600 mb-2" data-id="joqc8eai3" data-path="src/pages/BlogPage.tsx">
-                  <div className="flex items-center" data-id="stju35m1e" data-path="src/pages/BlogPage.tsx">
-                    <User className="w-4 h-4 mr-1" data-id="gg6618czq" data-path="src/pages/BlogPage.tsx" />
+              <CardHeader>
+                <div className="flex items-center gap-4 text-sm text-gray-600 mb-2">
+                  <div className="flex items-center">
+                    <User className="w-4 h-4 mr-1" />
                     {post.author}
                   </div>
-                  <div className="flex items-center" data-id="lhqct86cn" data-path="src/pages/BlogPage.tsx">
-                    <Calendar className="w-4 h-4 mr-1" data-id="mdqeuqcrn" data-path="src/pages/BlogPage.tsx" />
+                  <div className="flex items-center">
+                    <Calendar className="w-4 h-4 mr-1" />
                     {new Date(post.date).toLocaleDateString()}
                   </div>
                 </div>
-                <CardTitle className="text-xl group-hover:text-blue-600 transition-colors" data-id="9g1chuz9g" data-path="src/pages/BlogPage.tsx">
+                <CardTitle className="text-xl group-hover:text-blue-600 transition-colors">
                   {post.title}
                 </CardTitle>
               </CardHeader>
               
-              <CardContent data-id="18tkhdw24" data-path="src/pages/BlogPage.tsx">
-                <p className="text-gray-600 mb-4 line-clamp-3" data-id="69g27zkd2" data-path="src/pages/BlogPage.tsx">
+              <CardContent>
+                <p className="text-gray-600 mb-4 line-clamp-3">
                   {post.excerpt}
                 </p>
                 
-                <div className="flex items-center justify-between" data-id="o62t4od9u" data-path="src/pages/BlogPage.tsx">
-                  <div className="flex items-center text-sm text-gray-500" data-id="utb16d7dh" data-path="src/pages/BlogPage.tsx">
-                    <Clock className="w-4 h-4 mr-1" data-id="54r84o3b8" data-path="src/pages/BlogPage.tsx" />
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center text-sm text-gray-500">
+                    <Clock className="w-4 h-4 mr-1" />
                     {post.readTime}
                   </div>
                   
@@ -269,16 +269,16 @@ const BlogPage: React.FC = () => {
                   variant="ghost"
                   size="sm"
                   onClick={() => setSelectedPost(post)}
-                  className="group/button" data-id="8w7l7lw7u" data-path="src/pages/BlogPage.tsx">
+                  className="group/button">
 
                     Read More
-                    <ArrowRight className="w-4 h-4 ml-1 group-hover/button:translate-x-1 transition-transform" data-id="0q1l5dei1" data-path="src/pages/BlogPage.tsx" />
+                    <ArrowRight className="w-4 h-4 ml-1 group-hover/button:translate-x-1 transition-transform" />
                   </Button>
                 </div>
                 
-                <div className="flex flex-wrap gap-1 mt-4" data-id="7nz0ibip9" data-path="src/pages/BlogPage.tsx">
+                <div className="flex flex-wrap gap-1 mt-4">
                   {post.tags.slice(0, 3).map((tag) =>
-                <Badge key={tag} variant="outline" className="text-xs" data-id="ezl8lqcrc" data-path="src/pages/BlogPage.tsx">
+                <Badge key={tag} variant="outline" className="text-xs">
                       {tag}
                     </Badge>
                 )}
@@ -289,11 +289,11 @@ const BlogPage: React.FC = () => {
         </div>
 
         {filteredPosts.length === 0 &&
-        <div className="text-center py-12" data-id="h5za5cpt0" data-path="src/pages/BlogPage.tsx">
-            <h3 className="text-lg font-semibold text-gray-900 mb-2" data-id="zqjid0ai3" data-path="src/pages/BlogPage.tsx">
+        <div className="text-center py-12">
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">
               No posts found
             </h3>
-            <p className="text-gray-600" data-id="d29jkhqtb" data-path="src/pages/BlogPage.tsx">
+            <p className="text-gray-600">
               Try adjusting your search terms or category filter.
             </p>
           </div>

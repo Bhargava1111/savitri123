@@ -5,6 +5,7 @@ export interface Product {
   price: number;
   image: string;
   category: string;
+  categories?: string[];
   stock_quantity: number;
   rating?: number;
   reviews?: number;
@@ -12,12 +13,19 @@ export interface Product {
   variants?: ProductVariant[];
   is_active: boolean;
   image_url?: string;
+  image_urls?: string[];
+  brand?: string;
+  tags?: string[];
+  expiry_date?: string;
+  barcode?: string;
 }
 
 export interface ProductVariant {
-  weight: string;
+  weight?: string;
   price: number;
   stock: number;
+  color?: string;
+  size?: string;
 }
 
 export interface Order {

@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogDescription } from '@/components/ui/dialog';
 import { Badge } from '@/components/ui/badge';
 import {
   Plus,
@@ -96,6 +96,7 @@ const CategoryManagement: React.FC = () => {
       resetForm();
       setIsDialogOpen(false);
       await loadCategories();
+      window.dispatchEvent(new Event('categoriesUpdated'));
     } catch (error) {
       console.error('Error saving category:', error);
       toast({
@@ -142,6 +143,7 @@ const CategoryManagement: React.FC = () => {
       });
 
       await loadCategories();
+      window.dispatchEvent(new Event('categoriesUpdated'));
     } catch (error) {
       console.error('Error deleting category:', error);
       toast({
@@ -165,6 +167,7 @@ const CategoryManagement: React.FC = () => {
       });
 
       await loadCategories();
+      window.dispatchEvent(new Event('categoriesUpdated'));
     } catch (error) {
       console.error('Error updating category status:', error);
       toast({
@@ -176,73 +179,76 @@ const CategoryManagement: React.FC = () => {
   };
 
   return (
-    <div className="space-y-6" data-id="f3o10s2hl" data-path="src/components/CategoryManagement.tsx">
+    <div className="space-y-6">
       {/* Header */}
-      <div className="flex justify-between items-center" data-id="lgjjpsq6x" data-path="src/components/CategoryManagement.tsx">
-        <div data-id="1llw01yot" data-path="src/components/CategoryManagement.tsx">
-          <h2 className="text-2xl font-bold" data-id="bqmhwvlfa" data-path="src/components/CategoryManagement.tsx">Category Management</h2>
-          <p className="text-gray-600" data-id="8wvzxldn3" data-path="src/components/CategoryManagement.tsx">Organize your products with categories</p>
+      <div className="flex justify-between items-center">
+        <div>
+          <h2 className="text-2xl font-bold">Category Management</h2>
+          <p className="text-gray-600">Organize your products with categories</p>
         </div>
-        <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen} data-id="d7vafhuxl" data-path="src/components/CategoryManagement.tsx">
-          <DialogTrigger asChild data-id="i0gygrb50" data-path="src/components/CategoryManagement.tsx">
-            <Button onClick={() => {resetForm();setIsDialogOpen(true);}} data-id="o9wppersg" data-path="src/components/CategoryManagement.tsx">
-              <Plus className="w-4 h-4 mr-2" data-id="wyc4nofjh" data-path="src/components/CategoryManagement.tsx" />
+        <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+          <DialogTrigger asChild>
+            <Button onClick={() => {resetForm();setIsDialogOpen(true);}}>
+              <Plus className="w-4 h-4 mr-2" />
               Add Category
             </Button>
           </DialogTrigger>
-          <DialogContent className="max-w-md" data-id="rmapp0wa6" data-path="src/components/CategoryManagement.tsx">
-            <DialogHeader data-id="ll861df1p" data-path="src/components/CategoryManagement.tsx">
-              <DialogTitle data-id="tsvvs0rja" data-path="src/components/CategoryManagement.tsx">
+          <DialogContent className="max-w-md">
+            <DialogHeader>
+              <DialogTitle>
                 {editingCategory ? 'Edit Category' : 'Add New Category'}
               </DialogTitle>
+              <DialogDescription>
+                {editingCategory ? 'Update the category information below.' : 'Create a new category to organize your products.'}
+              </DialogDescription>
             </DialogHeader>
             
-            <form onSubmit={handleSubmit} className="space-y-4" data-id="7eqq0515a" data-path="src/components/CategoryManagement.tsx">
-              <div data-id="3n24rsjok" data-path="src/components/CategoryManagement.tsx">
-                <Label htmlFor="name" data-id="7laeak2wk" data-path="src/components/CategoryManagement.tsx">Category Name</Label>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <Label htmlFor="name">Category Name</Label>
                 <Input
                   id="name"
                   value={formData.name}
                   onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
                   placeholder="e.g., Pickles"
-                  required data-id="8s1tlekr3" data-path="src/components/CategoryManagement.tsx" />
+                  required />
 
               </div>
 
-              <div data-id="io8ucowse" data-path="src/components/CategoryManagement.tsx">
-                <Label htmlFor="description" data-id="yiifoe3wi" data-path="src/components/CategoryManagement.tsx">Description</Label>
+              <div>
+                <Label htmlFor="description">Description</Label>
                 <Input
                   id="description"
                   value={formData.description}
                   onChange={(e) => setFormData((prev) => ({ ...prev, description: e.target.value }))}
                   placeholder="Brief description of the category"
-                  required data-id="qp05abjqk" data-path="src/components/CategoryManagement.tsx" />
+                  required />
 
               </div>
 
-              <div className="flex items-center space-x-2" data-id="ggygsgvp3" data-path="src/components/CategoryManagement.tsx">
+              <div className="flex items-center space-x-2">
                 <input
                   type="checkbox"
                   id="active"
                   checked={formData.is_active}
-                  onChange={(e) => setFormData((prev) => ({ ...prev, is_active: e.target.checked }))} data-id="tjr8qsuec" data-path="src/components/CategoryManagement.tsx" />
+                  onChange={(e) => setFormData((prev) => ({ ...prev, is_active: e.target.checked }))} />
 
-                <Label htmlFor="active" data-id="1dnwfgvm3" data-path="src/components/CategoryManagement.tsx">Active Category</Label>
+                <Label htmlFor="active">Active Category</Label>
               </div>
 
-              <div className="flex justify-end space-x-2" data-id="jlrukn8i3" data-path="src/components/CategoryManagement.tsx">
-                <Button type="button" variant="outline" onClick={() => setIsDialogOpen(false)} data-id="nn3bar8zl" data-path="src/components/CategoryManagement.tsx">
+              <div className="flex justify-end space-x-2">
+                <Button type="button" variant="outline" onClick={() => setIsDialogOpen(false)}>
                   Cancel
                 </Button>
-                <Button type="submit" disabled={isLoading} data-id="nu3p0rxnx" data-path="src/components/CategoryManagement.tsx">
+                <Button type="submit" disabled={isLoading}>
                   {isLoading ?
-                  <div className="flex items-center gap-2" data-id="p70kclvuv" data-path="src/components/CategoryManagement.tsx">
-                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white" data-id="1z9uzz429" data-path="src/components/CategoryManagement.tsx"></div>
+                  <div className="flex items-center gap-2">
+                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
                       Saving...
                     </div> :
 
-                  <div className="flex items-center gap-2" data-id="asf7cu7zh" data-path="src/components/CategoryManagement.tsx">
-                      <Save className="h-4 w-4" data-id="9e4a8l1uj" data-path="src/components/CategoryManagement.tsx" />
+                  <div className="flex items-center gap-2">
+                      <Save className="h-4 w-4" />
                       {editingCategory ? 'Update' : 'Add'} Category
                     </div>
                   }
@@ -254,48 +260,48 @@ const CategoryManagement: React.FC = () => {
       </div>
 
       {/* Categories Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-id="vgsbsgkrr" data-path="src/components/CategoryManagement.tsx">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {categories.map((category) =>
-        <Card key={category.id} className={`${!category.is_active ? 'opacity-50' : ''}`} data-id="nga1r4jf9" data-path="src/components/CategoryManagement.tsx">
-            <CardContent className="p-4" data-id="tay6dqspk" data-path="src/components/CategoryManagement.tsx">
-              <div className="space-y-3" data-id="kks1726qh" data-path="src/components/CategoryManagement.tsx">
+        <Card key={category.id} className={`${!category.is_active ? 'opacity-50' : ''}`}>
+            <CardContent className="p-4">
+              <div className="space-y-3">
                 {/* Category Header */}
-                <div className="flex justify-between items-start" data-id="cqyavt65t" data-path="src/components/CategoryManagement.tsx">
-                  <div className="flex items-center space-x-2" data-id="z3swz4dvj" data-path="src/components/CategoryManagement.tsx">
-                    <Tag className="w-5 h-5 text-blue-600" data-id="djxsl46bl" data-path="src/components/CategoryManagement.tsx" />
-                    <h3 className="font-semibold text-lg" data-id="tzk3oizdj" data-path="src/components/CategoryManagement.tsx">{category.name}</h3>
+                <div className="flex justify-between items-start">
+                  <div className="flex items-center space-x-2">
+                    <Tag className="w-5 h-5 text-blue-600" />
+                    <h3 className="font-semibold text-lg">{category.name}</h3>
                   </div>
-                  <Badge variant={category.is_active ? "default" : "secondary"} data-id="2lk334lg2" data-path="src/components/CategoryManagement.tsx">
+                  <Badge variant={category.is_active ? "default" : "secondary"}>
                     {category.is_active ? "Active" : "Inactive"}
                   </Badge>
                 </div>
 
                 {/* Category Info */}
-                <div data-id="25xy35shc" data-path="src/components/CategoryManagement.tsx">
-                  <p className="text-gray-600 text-sm" data-id="e4pa2usgb" data-path="src/components/CategoryManagement.tsx">{category.description}</p>
-                  <div className="flex items-center space-x-2 mt-2" data-id="cn34uq6t2" data-path="src/components/CategoryManagement.tsx">
-                    <Package className="w-4 h-4 text-gray-400" data-id="drddrr85c" data-path="src/components/CategoryManagement.tsx" />
-                    <span className="text-sm text-gray-500" data-id="mg6r2xta9" data-path="src/components/CategoryManagement.tsx">
+                <div>
+                  <p className="text-gray-600 text-sm">{category.description}</p>
+                  <div className="flex items-center space-x-2 mt-2">
+                    <Package className="w-4 h-4 text-gray-400" />
+                    <span className="text-sm text-gray-500">
                       {category.product_count || 0} products
                     </span>
                   </div>
                 </div>
 
                 {/* Actions */}
-                <div className="flex space-x-2" data-id="h8f5sh77e" data-path="src/components/CategoryManagement.tsx">
+                <div className="flex space-x-2">
                   <Button
                   size="sm"
                   variant="outline"
                   onClick={() => handleEdit(category)}
-                  className="flex-1" data-id="fv8yj04dh" data-path="src/components/CategoryManagement.tsx">
+                  className="flex-1">
 
-                    <Edit className="w-4 h-4 mr-1" data-id="b8m6w6cov" data-path="src/components/CategoryManagement.tsx" />
+                    <Edit className="w-4 h-4 mr-1" />
                     Edit
                   </Button>
                   <Button
                   size="sm"
                   variant="outline"
-                  onClick={() => toggleCategoryStatus(category)} data-id="guteghsjb" data-path="src/components/CategoryManagement.tsx">
+                  onClick={() => toggleCategoryStatus(category)}>
 
                     {category.is_active ? 'Deactivate' : 'Activate'}
                   </Button>
@@ -303,9 +309,9 @@ const CategoryManagement: React.FC = () => {
                   size="sm"
                   variant="destructive"
                   onClick={() => handleDelete(category.id)}
-                  disabled={category.product_count && category.product_count > 0} data-id="gztydsfk2" data-path="src/components/CategoryManagement.tsx">
+                  disabled={category.product_count && category.product_count > 0}>
 
-                    <Trash2 className="w-4 h-4" data-id="g49zwmupy" data-path="src/components/CategoryManagement.tsx" />
+                    <Trash2 className="w-4 h-4" />
                   </Button>
                 </div>
               </div>
@@ -315,15 +321,15 @@ const CategoryManagement: React.FC = () => {
       </div>
 
       {categories.length === 0 && !isLoading &&
-      <Card data-id="404d303bi" data-path="src/components/CategoryManagement.tsx">
-          <CardContent className="text-center py-12" data-id="p6sgnkwm3" data-path="src/components/CategoryManagement.tsx">
-            <Tag className="w-16 h-16 text-gray-300 mx-auto mb-4" data-id="44ip8frfu" data-path="src/components/CategoryManagement.tsx" />
-            <h3 className="text-xl font-semibold mb-2" data-id="dxsv9b0sc" data-path="src/components/CategoryManagement.tsx">No Categories Found</h3>
-            <p className="text-gray-600 mb-4" data-id="bzuu39f1g" data-path="src/components/CategoryManagement.tsx">
+      <Card>
+          <CardContent className="text-center py-12">
+            <Tag className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+            <h3 className="text-xl font-semibold mb-2">No Categories Found</h3>
+            <p className="text-gray-600 mb-4">
               Start by adding your first product category
             </p>
-            <Button onClick={() => setIsDialogOpen(true)} data-id="v4wmueo00" data-path="src/components/CategoryManagement.tsx">
-              <Plus className="w-4 h-4 mr-2" data-id="mphy6yfqv" data-path="src/components/CategoryManagement.tsx" />
+            <Button onClick={() => setIsDialogOpen(true)}>
+              <Plus className="w-4 h-4 mr-2" />
               Add Your First Category
             </Button>
           </CardContent>

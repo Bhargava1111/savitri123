@@ -22,70 +22,47 @@ export class ProductService {
         searchTerm,
         minPrice,
         maxPrice,
-        sortBy = 'ID',
+        sortBy = 'id',
         sortOrder = 'desc'
       } = params;
 
-      const filters: any[] = [
-      {
-        name: 'is_active',
-        op: 'Equal',
-        value: true
-      }];
-
-
-      // Add category filter
-      if (category && category !== 'All') {
-        filters.push({
-          name: 'category',
-          op: 'Equal',
-          value: category
-        });
+      // Build query parameters
+      const queryParams = new URLSearchParams();
+      queryParams.append('page', pageNo.toString());
+      queryParams.append('limit', pageSize.toString());
+      queryParams.append('sortBy', sortBy);
+      queryParams.append('sortOrder', sortOrder);
+      
+      if (category && category !== '') {
+        queryParams.append('category', category);
       }
-
-      // Add search filter
+      
       if (searchTerm) {
-        filters.push({
-          name: 'name',
-          op: 'StringContains',
-          value: searchTerm
-        });
+        queryParams.append('search', searchTerm);
       }
-
-      // Add price range filters
+      
       if (minPrice !== undefined) {
-        filters.push({
-          name: 'price',
-          op: 'GreaterThanOrEqual',
-          value: minPrice
-        });
+        queryParams.append('minPrice', minPrice.toString());
       }
-
+      
       if (maxPrice !== undefined) {
-        filters.push({
-          name: 'price',
-          op: 'LessThanOrEqual',
-          value: maxPrice
-        });
+        queryParams.append('maxPrice', maxPrice.toString());
       }
 
-      const { data, error } = await window.ezsite.apis.tablePage(PRODUCTS_TABLE_ID, {
-        PageNo: pageNo,
-        PageSize: pageSize,
-        OrderByField: sortBy,
-        IsAsc: sortOrder === 'asc',
-        Filters: filters
-      });
-
-      if (error) {
-        throw new Error(error);
+      const response = await fetch(`/api/products?${queryParams.toString()}`);
+      
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
       }
 
+      const result = await response.json();
+      
       return {
-        products: data?.List || [],
-        totalCount: data?.VirtualCount || 0,
+        products: result.data || [],
+        totalCount: result.total || 0,
         currentPage: pageNo,
-        totalPages: Math.ceil((data?.VirtualCount || 0) / pageSize)
+        totalPages: Math.ceil((result.total || 0) / pageSize)
       };
     } catch (error) {
       console.error('Error fetching products:', error);
@@ -96,28 +73,18 @@ export class ProductService {
   // Get a single product by ID
   static async getProductById(productId: string): Promise<Product | null> {
     try {
-      const { data, error } = await window.ezsite.apis.tablePage(PRODUCTS_TABLE_ID, {
-        PageNo: 1,
-        PageSize: 1,
-        Filters: [
-        {
-          name: 'id',
-          op: 'Equal',
-          value: productId
-        },
-        {
-          name: 'is_active',
-          op: 'Equal',
-          value: true
-        }]
-
-      });
-
-      if (error) {
-        throw new Error(error);
+      const response = await fetch(`/api/products/${productId}`);
+      
+      if (!response.ok) {
+        if (response.status === 404) {
+          return null;
+        }
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
       }
 
-      return data?.List?.[0] || null;
+      const result = await response.json();
+      return result.data || null;
     } catch (error) {
       console.error('Error fetching product:', error);
       throw error;
@@ -127,25 +94,15 @@ export class ProductService {
   // Get featured products
   static async getFeaturedProducts(limit: number = 8) {
     try {
-      const { data, error } = await window.ezsite.apis.tablePage(PRODUCTS_TABLE_ID, {
-        PageNo: 1,
-        PageSize: limit,
-        OrderByField: 'ID',
-        IsAsc: false,
-        Filters: [
-        {
-          name: 'is_active',
-          op: 'Equal',
-          value: true
-        }]
-
-      });
-
-      if (error) {
-        throw new Error(error);
+      const response = await fetch(`/api/products?limit=${limit}&sortBy=id&sortOrder=desc`);
+      
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
       }
 
-      return data?.List || [];
+      const result = await response.json();
+      return result.data || [];
     } catch (error) {
       console.error('Error fetching featured products:', error);
       throw error;
@@ -155,30 +112,15 @@ export class ProductService {
   // Get products by category
   static async getProductsByCategory(category: string, limit: number = 12) {
     try {
-      const { data, error } = await window.ezsite.apis.tablePage(PRODUCTS_TABLE_ID, {
-        PageNo: 1,
-        PageSize: limit,
-        OrderByField: 'ID',
-        IsAsc: false,
-        Filters: [
-        {
-          name: 'category',
-          op: 'Equal',
-          value: category
-        },
-        {
-          name: 'is_active',
-          op: 'Equal',
-          value: true
-        }]
-
-      });
-
-      if (error) {
-        throw new Error(error);
+      const response = await fetch(`/api/products?category=${encodeURIComponent(category)}&limit=${limit}&sortBy=id&sortOrder=desc`);
+      
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
       }
 
-      return data?.List || [];
+      const result = await response.json();
+      return result.data || [];
     } catch (error) {
       console.error('Error fetching products by category:', error);
       throw error;
@@ -188,25 +130,15 @@ export class ProductService {
   // Get available categories
   static async getCategories() {
     try {
-      const { data, error } = await window.ezsite.apis.tablePage(PRODUCTS_TABLE_ID, {
-        PageNo: 1,
-        PageSize: 1000,
-        Filters: [
-        {
-          name: 'is_active',
-          op: 'Equal',
-          value: true
-        }]
-
-      });
-
-      if (error) {
-        throw new Error(error);
+      const response = await fetch('/api/categories');
+      
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
       }
 
-      // Extract unique categories
-      const categories = [...new Set(data?.List?.map((product: any) => product.category) || [])];
-      return categories.filter(Boolean);
+      const result = await response.json();
+      return result.data || [];
     } catch (error) {
       console.error('Error fetching categories:', error);
       throw error;
@@ -226,17 +158,27 @@ export class ProductService {
     try {
       const product = {
         ...productData,
-        features: JSON.stringify(productData.features || []),
-        is_active: true
+        features: productData.features || [],
+        is_active: true,
+        created_at: new Date().toISOString(),
+        updated_at: new Date().toISOString()
       };
 
-      const { error } = await window.ezsite.apis.tableCreate(PRODUCTS_TABLE_ID, product);
+      const response = await fetch('/api/products', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(product),
+      });
 
-      if (error) {
-        throw new Error(error);
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
       }
 
-      return { success: true };
+      const result = await response.json();
+      return result;
     } catch (error) {
       console.error('Error creating product:', error);
       throw error;
@@ -256,21 +198,25 @@ export class ProductService {
   }>) {
     try {
       const updateData: any = {
-        id: productId,
-        ...productData
+        ...productData,
+        updated_at: new Date().toISOString()
       };
 
-      if (productData.features) {
-        updateData.features = JSON.stringify(productData.features);
+      const response = await fetch(`/api/products/${productId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updateData),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
       }
 
-      const { error } = await window.ezsite.apis.tableUpdate(PRODUCTS_TABLE_ID, updateData);
-
-      if (error) {
-        throw new Error(error);
-      }
-
-      return { success: true };
+      const result = await response.json();
+      return result;
     } catch (error) {
       console.error('Error updating product:', error);
       throw error;
@@ -280,16 +226,20 @@ export class ProductService {
   // Admin: Delete product (soft delete by setting is_active to false)
   static async deleteProduct(productId: number) {
     try {
-      const { error } = await window.ezsite.apis.tableUpdate(PRODUCTS_TABLE_ID, {
-        id: productId,
-        is_active: false
+      const response = await fetch(`/api/products/${productId}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
       });
 
-      if (error) {
-        throw new Error(error);
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
       }
 
-      return { success: true };
+      const result = await response.json();
+      return result;
     } catch (error) {
       console.error('Error deleting product:', error);
       throw error;
@@ -299,16 +249,24 @@ export class ProductService {
   // Update stock quantity
   static async updateStock(productId: number, quantity: number) {
     try {
-      const { error } = await window.ezsite.apis.tableUpdate(PRODUCTS_TABLE_ID, {
-        id: productId,
-        stock_quantity: quantity
+      const response = await fetch(`/api/products/${productId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          stock_quantity: quantity,
+          updated_at: new Date().toISOString()
+        }),
       });
 
-      if (error) {
-        throw new Error(error);
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
       }
 
-      return { success: true };
+      const result = await response.json();
+      return result;
     } catch (error) {
       console.error('Error updating stock:', error);
       throw error;
@@ -326,3 +284,4 @@ export class ProductService {
     }
   }
 }
+

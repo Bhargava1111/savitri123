@@ -9,6 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from '@/components/ui/dialog';
 import { useToast } from '@/hooks/use-toast';
 import { Bell, Plus, Send, Loader2, Eye } from 'lucide-react';
+import { format, formatDistanceToNow } from 'date-fns';
 
 // Define Notification interface based on NOTIFICATIONS_TABLE_ID structure
 interface Notification {
@@ -250,7 +251,16 @@ const NotificationManagement: React.FC<NotificationManagementProps> = () => {
                     <TableCell>{notification.type}</TableCell>
                     <TableCell>{notification.channel}</TableCell>
                     <TableCell>{notification.status}</TableCell>
-                    <TableCell>{new Date(notification.sent_at).toLocaleString()}</TableCell>
+                    <TableCell>
+                      {notification.sent_at ? (
+                        <div>
+                          <div>{format(new Date(notification.sent_at), 'MMM d, yyyy, h:mm a')}</div>
+                          <div className="text-xs text-gray-500">{formatDistanceToNow(new Date(notification.sent_at), { addSuffix: true })}</div>
+                        </div>
+                      ) : (
+                        'N/A'
+                      )}
+                    </TableCell>
                     <TableCell className="text-right">
                       <Button variant="ghost" size="sm" onClick={() => handleViewNotificationClick(notification)}>
                         <Eye className="h-4 w-4" />

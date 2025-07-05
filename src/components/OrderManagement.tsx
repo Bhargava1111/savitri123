@@ -9,6 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { useToast } from '@/hooks/use-toast';
 import { ShoppingCart, Eye, Truck, XCircle, CheckCircle, Loader2, DollarSign } from 'lucide-react';
 import { OrderService, Order, OrderItem } from '../services/OrderService';
+import { format, formatDistanceToNow } from 'date-fns';
 
 interface OrderManagementProps {}
 
@@ -205,7 +206,16 @@ const OrderManagement: React.FC<OrderManagementProps> = () => {
                         {order.order_status.charAt(0).toUpperCase() + order.order_status.slice(1)}
                       </span>
                     </TableCell>
-                    <TableCell>{new Date(order.order_date).toLocaleDateString()}</TableCell>
+                    <TableCell>
+                      {order.order_date ? (
+                        <div>
+                          <div>{format(new Date(order.order_date), 'MMM d, yyyy, h:mm a')}</div>
+                          <div className="text-xs text-gray-500">{formatDistanceToNow(new Date(order.order_date), { addSuffix: true })}</div>
+                        </div>
+                      ) : (
+                        'N/A'
+                      )}
+                    </TableCell>
                     <TableCell className="text-right">
                       <Button variant="ghost" size="sm" onClick={() => handleViewOrderClick(order.id.toString())}>
                         <Eye className="h-4 w-4" />

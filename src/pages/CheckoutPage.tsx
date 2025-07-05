@@ -182,9 +182,9 @@ const CheckoutPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">Checkout</h1>
-          <Button variant="outline" onClick={() => navigate('/cart')}>
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 sm:mb-8 space-y-4 sm:space-y-0">
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">Checkout</h1>
+          <Button variant="outline" onClick={() => navigate('/cart')} className="self-start sm:self-auto">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Cart
           </Button>
@@ -362,3 +362,4 @@ const CheckoutPage: React.FC = () => {
 };
 
 export default CheckoutPage;
+

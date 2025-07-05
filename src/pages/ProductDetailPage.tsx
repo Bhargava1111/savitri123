@@ -95,12 +95,12 @@ const ProductDetailPage: React.FC = () => {
 
   if (!product) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center" data-id="2fj2toeme" data-path="src/pages/ProductDetailPage.tsx">
-        <Card className="p-8 text-center" data-id="lrqiqkl5c" data-path="src/pages/ProductDetailPage.tsx">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4" data-id="54c5seull" data-path="src/pages/ProductDetailPage.tsx">Product Not Found</h2>
-          <p className="text-gray-600 mb-4" data-id="hidjsgs3o" data-path="src/pages/ProductDetailPage.tsx">The product you're looking for doesn't exist.</p>
-          <Button onClick={() => navigate('/products')} data-id="98llsh0ce" data-path="src/pages/ProductDetailPage.tsx">
-            <ArrowLeft className="w-4 h-4 mr-2" data-id="g1hke4imo" data-path="src/pages/ProductDetailPage.tsx" />
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <Card className="p-8 text-center">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Product Not Found</h2>
+          <p className="text-gray-600 mb-4">The product you're looking for doesn't exist.</p>
+          <Button onClick={() => navigate('/products')}>
+            <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Products
           </Button>
         </Card>
@@ -172,85 +172,85 @@ const ProductDetailPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50" data-id="qzppw49uy" data-path="src/pages/ProductDetailPage.tsx">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8" data-id="e3mcqih8c" data-path="src/pages/ProductDetailPage.tsx">
+    <div className="min-h-screen bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Breadcrumb */}
-        <div className="flex items-center space-x-2 text-sm text-gray-500 mb-8" data-id="12cpu0xpd" data-path="src/pages/ProductDetailPage.tsx">
-          <button onClick={() => navigate('/')} className="hover:text-gray-700" data-id="uib96ijs9" data-path="src/pages/ProductDetailPage.tsx">
+        <div className="flex items-center space-x-2 text-sm text-gray-500 mb-8">
+          <button onClick={() => navigate('/')} className="hover:text-gray-700">
             Home
           </button>
-          <span data-id="jrz6s6wiu" data-path="src/pages/ProductDetailPage.tsx">/</span>
-          <button onClick={() => navigate('/products')} className="hover:text-gray-700" data-id="emg5rkb09" data-path="src/pages/ProductDetailPage.tsx">
+          <span>/</span>
+          <button onClick={() => navigate('/products')} className="hover:text-gray-700">
             Products
           </button>
-          <span data-id="3njho0xf7" data-path="src/pages/ProductDetailPage.tsx">/</span>
-          <button onClick={() => navigate(`/products?category=${product.category}`)} className="hover:text-gray-700" data-id="2aq5lyh5w" data-path="src/pages/ProductDetailPage.tsx">
+          <span>/</span>
+          <button onClick={() => navigate(`/products?category=${product.category}`)} className="hover:text-gray-700">
             {product.category}
           </button>
-          <span data-id="0cyykhd31" data-path="src/pages/ProductDetailPage.tsx">/</span>
-          <span className="text-gray-900" data-id="2ijuypygp" data-path="src/pages/ProductDetailPage.tsx">Tomato Pickle</span>
+          <span>/</span>
+          <span className="text-gray-900">Tomato Pickle</span>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16" data-id="jmf3ighaw" data-path="src/pages/ProductDetailPage.tsx">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           {/* Product Images */}
-          <div className="relative" data-id="hpb2julvp" data-path="src/pages/ProductDetailPage.tsx">
-            <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800 border shadow-2xl p-8" data-id="uvn4cs1d6" data-path="src/pages/ProductDetailPage.tsx">
-              <div className="relative w-full h-full flex items-center justify-center" data-id="cjjrfw061" data-path="src/pages/ProductDetailPage.tsx">
+          <div className="relative">
+            <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800 border shadow-2xl p-8">
+              <div className="relative w-full h-full flex items-center justify-center">
                 {/* Background decorative elements */}
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-100/20 to-yellow-100/20 rounded-xl" data-id="p3yedi53o" data-path="src/pages/ProductDetailPage.tsx"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-100/20 to-yellow-100/20 rounded-xl"></div>
                 
                 {/* Product arrangement matching the image */}
-                <div className="relative w-full h-full flex items-center justify-center" data-id="o8zy556we" data-path="src/pages/ProductDetailPage.tsx">
+                <div className="relative w-full h-full flex items-center justify-center">
                   {/* Main product composition */}
-                  <div className="relative w-4/5 h-4/5 flex items-center justify-center" data-id="fcjom9hdi" data-path="src/pages/ProductDetailPage.tsx">
+                  <div className="relative w-4/5 h-4/5 flex items-center justify-center">
                     {/* Wicker mat background */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-amber-100 to-amber-200 rounded-full opacity-60 transform rotate-12" data-id="f8m197d0z" data-path="src/pages/ProductDetailPage.tsx"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-amber-100 to-amber-200 rounded-full opacity-60 transform rotate-12"></div>
                     
                     {/* Main pickle bowl */}
-                    <div className="relative z-10" data-id="ntjxn40u0" data-path="src/pages/ProductDetailPage.tsx">
+                    <div className="relative z-10">
                       <img
                         src={productImages[selectedImage]}
                         alt="Tomato Pickle"
-                        className="w-48 h-48 object-cover rounded-full drop-shadow-2xl" data-id="p5yay82g6" data-path="src/pages/ProductDetailPage.tsx" />
+                        className="w-48 h-48 object-cover rounded-full drop-shadow-2xl" />
                     </div>
                     
                     {/* Decorative elements */}
-                    <div className="absolute top-8 right-8 w-16 h-20 bg-gradient-to-b from-green-200 to-green-300 rounded-lg shadow-lg opacity-90 transform rotate-12" data-id="pbetknbx1" data-path="src/pages/ProductDetailPage.tsx">
-                      <div className="w-full h-full bg-gradient-to-b from-yellow-200 to-orange-300 rounded-lg flex items-center justify-center" data-id="hai2841ly" data-path="src/pages/ProductDetailPage.tsx">
-                        <span className="text-xs font-bold text-green-800 transform -rotate-12" data-id="bsgxzeqsj" data-path="src/pages/ProductDetailPage.tsx">Tomato<br data-id="8olscyjq8" data-path="src/pages/ProductDetailPage.tsx" />Pickle</span>
+                    <div className="absolute top-8 right-8 w-16 h-20 bg-gradient-to-b from-green-200 to-green-300 rounded-lg shadow-lg opacity-90 transform rotate-12">
+                      <div className="w-full h-full bg-gradient-to-b from-yellow-200 to-orange-300 rounded-lg flex items-center justify-center">
+                        <span className="text-xs font-bold text-green-800 transform -rotate-12">Tomato<br />Pickle</span>
                       </div>
                     </div>
                     
                     {/* Tomatoes */}
-                    <div className="absolute bottom-12 left-8 w-8 h-8 bg-red-500 rounded-full shadow-lg opacity-90" data-id="ek54ymtop" data-path="src/pages/ProductDetailPage.tsx"></div>
-                    <div className="absolute bottom-16 left-16 w-6 h-6 bg-red-600 rounded-full shadow-lg opacity-80" data-id="qhdxrtxme" data-path="src/pages/ProductDetailPage.tsx"></div>
+                    <div className="absolute bottom-12 left-8 w-8 h-8 bg-red-500 rounded-full shadow-lg opacity-90"></div>
+                    <div className="absolute bottom-16 left-16 w-6 h-6 bg-red-600 rounded-full shadow-lg opacity-80"></div>
                     
                     {/* Spice jar */}
-                    <div className="absolute bottom-8 right-12 w-6 h-10 bg-gradient-to-b from-amber-600 to-amber-800 rounded-sm shadow-lg opacity-80" data-id="jkb4yzw3x" data-path="src/pages/ProductDetailPage.tsx"></div>
+                    <div className="absolute bottom-8 right-12 w-6 h-10 bg-gradient-to-b from-amber-600 to-amber-800 rounded-sm shadow-lg opacity-80"></div>
                     
                     {/* Wooden spoon */}
-                    <div className="absolute top-16 left-12 w-12 h-2 bg-amber-600 rounded-full shadow-lg opacity-70 transform rotate-45" data-id="eiwn7kgwh" data-path="src/pages/ProductDetailPage.tsx"></div>
+                    <div className="absolute top-16 left-12 w-12 h-2 bg-amber-600 rounded-full shadow-lg opacity-70 transform rotate-45"></div>
                   </div>
                 </div>
               </div>
             </div>
             
             {/* Floating Action Buttons */}
-            <div className="absolute top-4 right-4 flex flex-col space-y-3" data-id="3w8ckor9o" data-path="src/pages/ProductDetailPage.tsx">
+            <div className="absolute top-4 right-4 flex flex-col space-y-3">
               <Button
                 variant={isInWishlist(product.id) ? "default" : "outline"}
                 size="sm"
                 className="w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm border shadow-lg hover:bg-white"
-                onClick={handleWishlistClick} data-id="50bkut4iv" data-path="src/pages/ProductDetailPage.tsx">
+                onClick={handleWishlistClick}>
                 <Heart className={`w-5 h-5 ${
                 isInWishlist(product.id) ? 'fill-current text-red-500' : 'text-gray-600'}`
-                } data-id="l4x16vn4f" data-path="src/pages/ProductDetailPage.tsx" />
+                } />
               </Button>
               <Button
                 variant="outline"
                 size="sm"
-                className="w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm border shadow-lg hover:bg-white" data-id="1hvmazcar" data-path="src/pages/ProductDetailPage.tsx">
-                <Eye className="w-5 h-5 text-gray-600" data-id="40ux8tc3n" data-path="src/pages/ProductDetailPage.tsx" />
+                className="w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm border shadow-lg hover:bg-white">
+                <Eye className="w-5 h-5 text-gray-600" />
               </Button>
               <Button
                 variant="outline"
@@ -290,52 +290,52 @@ const ProductDetailPage: React.FC = () => {
 
                   setShowComparison(true);
                 }}
-                className="w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm border shadow-lg hover:bg-white" data-id="wsnhsjd4i" data-path="src/pages/ProductDetailPage.tsx">
-                <Menu className="w-5 h-5 text-gray-600" data-id="u9ktalh3r" data-path="src/pages/ProductDetailPage.tsx" />
+                className="w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm border shadow-lg hover:bg-white">
+                <Menu className="w-5 h-5 text-gray-600" />
               </Button>
             </div>
           </div>
 
           {/* Product Info */}
-          <div className="space-y-6" data-id="svixp0fs3" data-path="src/pages/ProductDetailPage.tsx">
-            <div data-id="dtuh0d93f" data-path="src/pages/ProductDetailPage.tsx">
-              <Badge variant="secondary" className="mb-3 bg-orange-100 text-orange-800 px-3 py-1" data-id="fh8hh7m77" data-path="src/pages/ProductDetailPage.tsx">
+          <div className="space-y-6">
+            <div>
+              <Badge variant="secondary" className="mb-3 bg-orange-100 text-orange-800 px-3 py-1">
                 Veg Pickle
               </Badge>
-              <h1 className="text-4xl font-bold text-gray-900 mb-2" data-id="pgihmzt3q" data-path="src/pages/ProductDetailPage.tsx">
+              <h1 className="text-4xl font-bold text-gray-900 mb-2">
                 Tomato Pickle
               </h1>
-              <p className="text-lg text-gray-600 mb-6" data-id="efsgc9dvc" data-path="src/pages/ProductDetailPage.tsx">
+              <p className="text-lg text-gray-600 mb-6">
                 Premium quality homemade tomato pickle with traditional spices and authentic flavors. Made with fresh tomatoes and aromatic spices.
               </p>
               
               {/* Price Display */}
-              <div className="mb-6" data-id="18nifx2gy" data-path="src/pages/ProductDetailPage.tsx">
-                <span className="text-3xl font-bold text-green-600" data-id="lzjzfedrk" data-path="src/pages/ProductDetailPage.tsx">
+              <div className="mb-6">
+                <span className="text-3xl font-bold text-green-600">
                   ₹{currentPrice}
                 </span>
-                <span className="ml-3 text-lg text-gray-500 line-through" data-id="w5a64btzj" data-path="src/pages/ProductDetailPage.tsx">
+                <span className="ml-3 text-lg text-gray-500 line-through">
                   ₹{Math.round(currentPrice * 1.2)}
                 </span>
-                <span className="ml-2 text-sm bg-green-100 text-green-800 px-2 py-1 rounded" data-id="ozac2jrh8" data-path="src/pages/ProductDetailPage.tsx">
+                <span className="ml-2 text-sm bg-green-100 text-green-800 px-2 py-1 rounded">
                   Save ₹{Math.round(currentPrice * 0.2)}
                 </span>
               </div>
             </div>
 
             {/* Weight/Size Selector */}
-            <div className="space-y-3" data-id="7e3kuaf17" data-path="src/pages/ProductDetailPage.tsx">
-              <Select value={selectedVariant} onValueChange={setSelectedVariant} data-id="b5r77rhif" data-path="src/pages/ProductDetailPage.tsx">
-                <SelectTrigger className="w-full h-12 border-2 border-gray-200 rounded-lg bg-gray-50" data-id="atevgjb68" data-path="src/pages/ProductDetailPage.tsx">
-                  <SelectValue placeholder="Select weight" data-id="itu1ijagc" data-path="src/pages/ProductDetailPage.tsx" />
+            <div className="space-y-3">
+              <Select value={selectedVariant} onValueChange={setSelectedVariant}>
+                <SelectTrigger className="w-full h-12 border-2 border-gray-200 rounded-lg bg-gray-50">
+                  <SelectValue placeholder="Select weight" />
                 </SelectTrigger>
-                <SelectContent data-id="vl9qta6hq" data-path="src/pages/ProductDetailPage.tsx">
+                <SelectContent>
                   {getAvailableVariants().map((variant) => (
                     <SelectItem
                       key={variant.weight || variant.value}
                       value={variant.weight || variant.value}
-                      data-id="g8u6oxwym"
-                      data-path="src/pages/ProductDetailPage.tsx"
+                     
+                     
                     >
                       {variant.weight || variant.label}
                     </SelectItem>
@@ -345,25 +345,25 @@ const ProductDetailPage: React.FC = () => {
             </div>
 
             {/* Quantity and Add to Cart */}
-            <div className="space-y-4" data-id="rir3h2odt" data-path="src/pages/ProductDetailPage.tsx">
-              <div className="flex items-center justify-between" data-id="m2stm8h7a" data-path="src/pages/ProductDetailPage.tsx">
-                <div className="flex items-center space-x-3" data-id="2gxqv3n16" data-path="src/pages/ProductDetailPage.tsx">
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-3">
                   <Button
                     variant="outline"
                     size="sm"
                     onClick={() => handleQuantityChange(-1)}
                     disabled={quantity <= 1}
-                    className="w-10 h-10 rounded-lg border-2" data-id="vhv4o04u0" data-path="src/pages/ProductDetailPage.tsx">
-                    <Minus className="w-4 h-4" data-id="6bxk5hv3y" data-path="src/pages/ProductDetailPage.tsx" />
+                    className="w-10 h-10 rounded-lg border-2">
+                    <Minus className="w-4 h-4" />
                   </Button>
-                  <span className="w-12 text-center font-bold text-xl" data-id="tfizda95t" data-path="src/pages/ProductDetailPage.tsx">{quantity}</span>
+                  <span className="w-12 text-center font-bold text-xl">{quantity}</span>
                   <Button
                     variant="outline"
                     size="sm"
                     onClick={() => handleQuantityChange(1)}
                     disabled={quantity >= (product.stock_quantity || 100)}
-                    className="w-10 h-10 rounded-lg border-2" data-id="8o98sar0g" data-path="src/pages/ProductDetailPage.tsx">
-                    <Plus className="w-4 h-4" data-id="kuur8maty" data-path="src/pages/ProductDetailPage.tsx" />
+                    className="w-10 h-10 rounded-lg border-2">
+                    <Plus className="w-4 h-4" />
                   </Button>
                 </div>
 
@@ -371,61 +371,61 @@ const ProductDetailPage: React.FC = () => {
                   size="lg"
                   onClick={handleAddToCart}
                   disabled={(product.stock_quantity || 100) === 0}
-                  className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-semibold" data-id="uy6gbi6gy" data-path="src/pages/ProductDetailPage.tsx">
-                  <ShoppingCart className="w-5 h-5 mr-2" data-id="yzy08gckk" data-path="src/pages/ProductDetailPage.tsx" />
+                  className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-semibold">
+                  <ShoppingCart className="w-5 h-5 mr-2" />
                   ADD
                 </Button>
               </div>
             </div>
 
-            <Separator data-id="07nxfl43o" data-path="src/pages/ProductDetailPage.tsx" />
+            <Separator />
 
             {/* Product Features */}
-            <div className="space-y-3" data-id="fpwb3thvw" data-path="src/pages/ProductDetailPage.tsx">
-              <h3 className="font-semibold text-lg" data-id="3l22jg22d" data-path="src/pages/ProductDetailPage.tsx">Product Features</h3>
-              <ul className="space-y-2 text-gray-600" data-id="cm0yi0ilj" data-path="src/pages/ProductDetailPage.tsx">
-                <li className="flex items-center space-x-2" data-id="1wnlte4zm" data-path="src/pages/ProductDetailPage.tsx">
-                  <div className="w-2 h-2 bg-green-500 rounded-full" data-id="xggojkcma" data-path="src/pages/ProductDetailPage.tsx"></div>
-                  <span data-id="41ybcadoc" data-path="src/pages/ProductDetailPage.tsx">Made with fresh, ripe tomatoes</span>
+            <div className="space-y-3">
+              <h3 className="font-semibold text-lg">Product Features</h3>
+              <ul className="space-y-2 text-gray-600">
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span>Made with fresh, ripe tomatoes</span>
                 </li>
-                <li className="flex items-center space-x-2" data-id="v0q3zg8hq" data-path="src/pages/ProductDetailPage.tsx">
-                  <div className="w-2 h-2 bg-green-500 rounded-full" data-id="zkqry3bwf" data-path="src/pages/ProductDetailPage.tsx"></div>
-                  <span data-id="m6t2zkt7m" data-path="src/pages/ProductDetailPage.tsx">Traditional family recipe</span>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span>Traditional family recipe</span>
                 </li>
-                <li className="flex items-center space-x-2" data-id="n5eajyo7a" data-path="src/pages/ProductDetailPage.tsx">
-                  <div className="w-2 h-2 bg-green-500 rounded-full" data-id="zts32b5qo" data-path="src/pages/ProductDetailPage.tsx"></div>
-                  <span data-id="g1oh1j0ug" data-path="src/pages/ProductDetailPage.tsx">No artificial preservatives</span>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span>No artificial preservatives</span>
                 </li>
-                <li className="flex items-center space-x-2" data-id="2yd5lig9x" data-path="src/pages/ProductDetailPage.tsx">
-                  <div className="w-2 h-2 bg-green-500 rounded-full" data-id="1o8qqs055" data-path="src/pages/ProductDetailPage.tsx"></div>
-                  <span data-id="xrgqnzo7o" data-path="src/pages/ProductDetailPage.tsx">Rich in antioxidants and vitamins</span>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span>Rich in antioxidants and vitamins</span>
                 </li>
               </ul>
             </div>
 
-            <Separator data-id="0she8ehcy" data-path="src/pages/ProductDetailPage.tsx" />
+            <Separator />
 
             {/* Shipping & Returns */}
-            <div className="space-y-4" data-id="kztxw9sbb" data-path="src/pages/ProductDetailPage.tsx">
-              <div className="flex items-center space-x-3" data-id="9o714s169" data-path="src/pages/ProductDetailPage.tsx">
-                <Truck className="w-5 h-5 text-green-600" data-id="sf8g4226m" data-path="src/pages/ProductDetailPage.tsx" />
-                <div data-id="7da2uaexy" data-path="src/pages/ProductDetailPage.tsx">
-                  <p className="font-medium" data-id="rpwwt2f71" data-path="src/pages/ProductDetailPage.tsx">Free Shipping</p>
-                  <p className="text-sm text-gray-600" data-id="bi9uhb8hy" data-path="src/pages/ProductDetailPage.tsx">On orders over ₹499</p>
+            <div className="space-y-4">
+              <div className="flex items-center space-x-3">
+                <Truck className="w-5 h-5 text-green-600" />
+                <div>
+                  <p className="font-medium">Free Shipping</p>
+                  <p className="text-sm text-gray-600">On orders over ₹499</p>
                 </div>
               </div>
-              <div className="flex items-center space-x-3" data-id="np3b8hqd0" data-path="src/pages/ProductDetailPage.tsx">
-                <Shield className="w-5 h-5 text-blue-600" data-id="3s02kq5ga" data-path="src/pages/ProductDetailPage.tsx" />
-                <div data-id="cr9ehw7r1" data-path="src/pages/ProductDetailPage.tsx">
-                  <p className="font-medium" data-id="lzis5tptz" data-path="src/pages/ProductDetailPage.tsx">Secure Payment</p>
-                  <p className="text-sm text-gray-600" data-id="g1yccpga5" data-path="src/pages/ProductDetailPage.tsx">100% secure checkout</p>
+              <div className="flex items-center space-x-3">
+                <Shield className="w-5 h-5 text-blue-600" />
+                <div>
+                  <p className="font-medium">Secure Payment</p>
+                  <p className="text-sm text-gray-600">100% secure checkout</p>
                 </div>
               </div>
-              <div className="flex items-center space-x-3" data-id="vips232rj" data-path="src/pages/ProductDetailPage.tsx">
-                <RotateCcw className="w-5 h-5 text-purple-600" data-id="gn208gsi8" data-path="src/pages/ProductDetailPage.tsx" />
-                <div data-id="8tb65itax" data-path="src/pages/ProductDetailPage.tsx">
-                  <p className="font-medium" data-id="3xe6ce3q4" data-path="src/pages/ProductDetailPage.tsx">Easy Returns</p>
-                  <p className="text-sm text-gray-600" data-id="ljngxtw6y" data-path="src/pages/ProductDetailPage.tsx">7-day return policy</p>
+              <div className="flex items-center space-x-3">
+                <RotateCcw className="w-5 h-5 text-purple-600" />
+                <div>
+                  <p className="font-medium">Easy Returns</p>
+                  <p className="text-sm text-gray-600">7-day return policy</p>
                 </div>
               </div>
             </div>
@@ -433,19 +433,19 @@ const ProductDetailPage: React.FC = () => {
         </div>
 
         {/* Product Reviews */}
-        <div className="mb-16" data-id="7ocyi595h" data-path="src/pages/ProductDetailPage.tsx">
-          <ProductReviews productId={product.id} data-id="2wu26pold" data-path="src/pages/ProductDetailPage.tsx" />
+        <div className="mb-16">
+          <ProductReviews productId={product.id} />
         </div>
 
         {/* Related Products */}
         {relatedProducts.length > 0 &&
-        <div data-id="up090ia3t" data-path="src/pages/ProductDetailPage.tsx">
-            <h2 className="text-2xl font-bold text-gray-900 mb-8" data-id="3a78y50qg" data-path="src/pages/ProductDetailPage.tsx">
+        <div>
+            <h2 className="text-2xl font-bold text-gray-900 mb-8">
               Related Products
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" data-id="xtqau7zan" data-path="src/pages/ProductDetailPage.tsx">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {relatedProducts.map((relatedProduct) =>
-            <ProductCard key={relatedProduct.id} product={relatedProduct} data-id="gcl9viiei" data-path="src/pages/ProductDetailPage.tsx" />
+            <ProductCard key={relatedProduct.id} product={relatedProduct} />
             )}
             </div>
           </div>
@@ -454,7 +454,7 @@ const ProductDetailPage: React.FC = () => {
         {/* Comparison Modal */}
         <ProductComparison
           isOpen={showComparison}
-          onClose={() => setShowComparison(false)} data-id="lqwjtevqh" data-path="src/pages/ProductDetailPage.tsx" />
+          onClose={() => setShowComparison(false)} />
 
       </div>
     </div>);
@@ -462,3 +462,4 @@ const ProductDetailPage: React.FC = () => {
 };
 
 export default ProductDetailPage;
+

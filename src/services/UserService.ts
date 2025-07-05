@@ -6,8 +6,7 @@ export class UserService {
   static async getAllUsers(params?: { pageNo?: number; pageSize?: number; search?: string; role?: string }) {
     try {
       if (!window.ezsite || !window.ezsite.apis) {
-        console.error('UserService: window.ezsite.apis is not defined. Cannot fetch all users.');
-        throw new Error('API not available');
+        throw new Error('API client not initialized. Please refresh the page.');
       }
       const { pageNo = 1, pageSize = 20, search, role } = params || {};
       const filters: any[] = [];
@@ -20,11 +19,9 @@ export class UserService {
         });
       }
       if (role && role !== 'all') {
-        // Assuming 'role' is stored in the user profile table or can be inferred
-        // For now, we'll filter by email for 'admin' role as per AuthContext logic
         if (role === 'admin') {
           filters.push({
-            name: 'email', // Assuming email is stored in user profile
+            name: 'email',
             op: 'Like',
             value: '%admin%'
           });
@@ -38,7 +35,7 @@ export class UserService {
       }
 
       console.log(`UserService: Fetching all users from table ${USERS_TABLE_ID} with filters:`, filters);
-      const { data, error } = await window.ezsite.apis.tablePage(USERS_TABLE_ID, {
+      const response = await window.ezsite.apis.tablePage(USERS_TABLE_ID, {
         PageNo: pageNo,
         PageSize: pageSize,
         OrderByField: 'ID',
@@ -46,29 +43,38 @@ export class UserService {
         Filters: filters
       });
 
-      if (error) {
-        console.error('UserService: Error fetching all users:', error);
-        throw new Error(error);
+      // Check if response is valid
+      if (!response || typeof response !== 'object') {
+        throw new Error('Invalid response from server');
       }
-      console.log('UserService: Successfully fetched users:', data);
 
-      // Augment user profiles with role information if not directly available in table 10411
-      const usersWithRoles = data?.List?.map((profile: UserProfile & { Email?: string; ID?: string }) => {
+      // Check for error in response
+      if (response.error) {
+        throw new Error(response.error);
+      }
+
+      const { data } = response;
+      if (!data || !Array.isArray(data.List)) {
+        throw new Error('Invalid data format received from server');
+      }
+
+      // Augment user profiles with role information
+      const usersWithRoles = data.List.map((profile: UserProfile & { Email?: string; ID?: string }) => {
         const isAdmin = profile.Email === 'admin@example.com' || (profile.Email && profile.Email.includes('admin')) || profile.user_id === '1';
         return {
           ...profile,
-          ID: profile.user_id, // Ensure ID is consistent with User interface
-          Email: profile.Email || `${profile.phone_number}@phone.user`, // Fallback for phone users
+          ID: profile.user_id,
+          Email: profile.Email || `${profile.phone_number}@phone.user`,
           Name: profile.full_name,
           role: isAdmin ? 'admin' : 'customer'
         };
-      }) || [];
+      });
 
       return {
         users: usersWithRoles,
-        totalCount: data?.VirtualCount || 0,
+        totalCount: data.VirtualCount || 0,
         currentPage: pageNo,
-        totalPages: Math.ceil((data?.VirtualCount || 0) / pageSize)
+        totalPages: Math.ceil((data.VirtualCount || 0) / pageSize)
       };
     } catch (error) {
       console.error('Error fetching all users:', error);

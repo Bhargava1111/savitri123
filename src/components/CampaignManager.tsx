@@ -310,7 +310,7 @@ export default function CampaignManager() {
       completed: 'default',
       paused: 'destructive'
     };
-    return <Badge variant={variants[status] || 'default'} data-id="o2tps6q6v" data-path="src/components/CampaignManager.tsx">{status}</Badge>;
+    return <Badge variant={variants[status] || 'default'}>{status}</Badge>;
   };
 
   const getEngagementRate = (campaign: Campaign) => {
@@ -323,106 +323,106 @@ export default function CampaignManager() {
   const getWhatsAppUsers = () => userProfiles.filter((p) => p.whatsapp_notifications && p.marketing_notifications && p.phone_number).length;
 
   return (
-    <div className="space-y-6" data-id="gzwvdhb63" data-path="src/components/CampaignManager.tsx">
-      <div className="flex justify-between items-center" data-id="2n2oiv1bl" data-path="src/components/CampaignManager.tsx">
-        <div data-id="joora9xli" data-path="src/components/CampaignManager.tsx">
-          <h2 className="text-2xl font-bold" data-id="oayazhf9i" data-path="src/components/CampaignManager.tsx">Campaign Manager</h2>
-          <p className="text-gray-600" data-id="86279dgs0" data-path="src/components/CampaignManager.tsx">Create and manage marketing campaigns</p>
+    <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 space-y-6">
+      <div className="flex justify-between items-center">
+        <div>
+          <h2 className="text-2xl font-bold">Campaign Manager</h2>
+          <p className="text-gray-600">Create and manage marketing campaigns</p>
         </div>
-        <Dialog open={dialogOpen} onOpenChange={setDialogOpen} data-id="hscrt1dc1" data-path="src/components/CampaignManager.tsx">
-          <DialogTrigger asChild data-id="qz12s12rf" data-path="src/components/CampaignManager.tsx">
-            <Button onClick={resetForm} data-id="v6mv7k42m" data-path="src/components/CampaignManager.tsx">
-              <Plus className="h-4 w-4 mr-2" data-id="g3lx1kf2f" data-path="src/components/CampaignManager.tsx" />
+        <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+          <DialogTrigger asChild>
+            <Button onClick={resetForm}>
+              <Plus className="h-4 w-4 mr-2" />
               New Campaign
             </Button>
           </DialogTrigger>
-          <DialogContent className="max-w-2xl" data-id="mlkyujeq0" data-path="src/components/CampaignManager.tsx">
-            <DialogHeader data-id="6wlqdaa9k" data-path="src/components/CampaignManager.tsx">
-              <DialogTitle data-id="5vmw3javw" data-path="src/components/CampaignManager.tsx">
+          <DialogContent className="max-w-2xl">
+            <DialogHeader>
+              <DialogTitle>
                 {editingCampaign ? 'Edit Campaign' : 'Create New Campaign'}
               </DialogTitle>
-              <DialogDescription data-id="fpjrklsjk" data-path="src/components/CampaignManager.tsx">
+              <DialogDescription>
                 Create engaging campaigns to reach your customers
               </DialogDescription>
             </DialogHeader>
-            <form onSubmit={handleSubmit} className="space-y-4" data-id="8bgqfmq07" data-path="src/components/CampaignManager.tsx">
-              <div className="grid grid-cols-2 gap-4" data-id="w91k2h5jj" data-path="src/components/CampaignManager.tsx">
-                <div className="space-y-2" data-id="hdvds84n8" data-path="src/components/CampaignManager.tsx">
-                  <Label htmlFor="name" data-id="nvcns5end" data-path="src/components/CampaignManager.tsx">Campaign Name</Label>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor="name">Campaign Name</Label>
                   <Input
                     id="name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="Summer Sale 2024"
-                    required data-id="eotyr6e7u" data-path="src/components/CampaignManager.tsx" />
+                    required />
 
                 </div>
-                <div className="space-y-2" data-id="n34xdj918" data-path="src/components/CampaignManager.tsx">
-                  <Label htmlFor="type" data-id="weeyeyl7f" data-path="src/components/CampaignManager.tsx">Campaign Type</Label>
+                <div className="space-y-2">
+                  <Label htmlFor="type">Campaign Type</Label>
                   <Select
                     value={formData.type}
-                    onValueChange={(value) => setFormData({ ...formData, type: value })} data-id="htay25o5m" data-path="src/components/CampaignManager.tsx">
+                    onValueChange={(value) => setFormData({ ...formData, type: value })}>
 
-                    <SelectTrigger data-id="8o0pf0ml5" data-path="src/components/CampaignManager.tsx">
-                      <SelectValue data-id="r8t86kqki" data-path="src/components/CampaignManager.tsx" />
+                    <SelectTrigger>
+                      <SelectValue />
                     </SelectTrigger>
-                    <SelectContent data-id="0apuv5utz" data-path="src/components/CampaignManager.tsx">
-                      <SelectItem value="email" data-id="jw20qoj4f" data-path="src/components/CampaignManager.tsx">Email</SelectItem>
-                      <SelectItem value="whatsapp" data-id="77ufyy7lp" data-path="src/components/CampaignManager.tsx">WhatsApp</SelectItem>
-                      <SelectItem value="mixed" data-id="a40sanuq6" data-path="src/components/CampaignManager.tsx">Mixed</SelectItem>
+                    <SelectContent>
+                      <SelectItem value="email">Email</SelectItem>
+                      <SelectItem value="whatsapp">WhatsApp</SelectItem>
+                      <SelectItem value="mixed">Mixed</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
               </div>
               
-              <div className="space-y-2" data-id="ahkm5nqld" data-path="src/components/CampaignManager.tsx">
-                <Label htmlFor="description" data-id="4z134nym6" data-path="src/components/CampaignManager.tsx">Description</Label>
+              <div className="space-y-2">
+                <Label htmlFor="description">Description</Label>
                 <Textarea
                   id="description"
                   value={formData.description}
                   onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                  placeholder="Campaign description and goals" data-id="kbi31whwd" data-path="src/components/CampaignManager.tsx" />
+                  placeholder="Campaign description and goals" />
 
               </div>
               
-              <div className="space-y-2" data-id="chi68ks2d" data-path="src/components/CampaignManager.tsx">
-                <Label htmlFor="subject" data-id="oomrf3w78" data-path="src/components/CampaignManager.tsx">Subject/Title</Label>
+              <div className="space-y-2">
+                <Label htmlFor="subject">Subject/Title</Label>
                 <Input
                   id="subject"
                   value={formData.subject}
                   onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                   placeholder="🎉 Summer Sale - Up to 50% Off!"
-                  required data-id="57nwof16t" data-path="src/components/CampaignManager.tsx" />
+                  required />
 
               </div>
               
-              <div className="space-y-2" data-id="motmv4zh8" data-path="src/components/CampaignManager.tsx">
-                <Label htmlFor="content" data-id="cif8f6kiz" data-path="src/components/CampaignManager.tsx">Message Content</Label>
+              <div className="space-y-2">
+                <Label htmlFor="content">Message Content</Label>
                 <Textarea
                   id="content"
                   value={formData.content}
                   onChange={(e) => setFormData({ ...formData, content: e.target.value })}
                   placeholder="Your campaign message..."
                   rows={6}
-                  required data-id="0b5pi9ixd" data-path="src/components/CampaignManager.tsx" />
+                  required />
 
               </div>
               
-              <div className="space-y-2" data-id="2wlicr9un" data-path="src/components/CampaignManager.tsx">
-                <Label htmlFor="scheduled_at" data-id="jr5mu6xah" data-path="src/components/CampaignManager.tsx">Schedule (Optional)</Label>
+              <div className="space-y-2">
+                <Label htmlFor="scheduled_at">Schedule (Optional)</Label>
                 <Input
                   id="scheduled_at"
                   type="datetime-local"
                   value={formData.scheduled_at}
-                  onChange={(e) => setFormData({ ...formData, scheduled_at: e.target.value })} data-id="m9h1qpb1g" data-path="src/components/CampaignManager.tsx" />
+                  onChange={(e) => setFormData({ ...formData, scheduled_at: e.target.value })} />
 
               </div>
               
-              <DialogFooter data-id="grmqtouf7" data-path="src/components/CampaignManager.tsx">
-                <Button type="button" variant="outline" onClick={() => setDialogOpen(false)} data-id="ktlm0d3j4" data-path="src/components/CampaignManager.tsx">
+              <DialogFooter>
+                <Button type="button" variant="outline" onClick={() => setDialogOpen(false)}>
                   Cancel
                 </Button>
-                <Button type="submit" disabled={isLoading} data-id="0wpdduj65" data-path="src/components/CampaignManager.tsx">
+                <Button type="submit" disabled={isLoading}>
                   {isLoading ? 'Saving...' : editingCampaign ? 'Update' : 'Create'}
                 </Button>
               </DialogFooter>
@@ -431,99 +431,99 @@ export default function CampaignManager() {
         </Dialog>
       </div>
 
-      <Tabs value={activeTab} onValueChange={setActiveTab} data-id="h1angepbk" data-path="src/components/CampaignManager.tsx">
-        <TabsList data-id="gxeme3x62" data-path="src/components/CampaignManager.tsx">
-          <TabsTrigger value="campaigns" data-id="9hbtdpkum" data-path="src/components/CampaignManager.tsx">Campaigns</TabsTrigger>
-          <TabsTrigger value="analytics" data-id="07wym6nke" data-path="src/components/CampaignManager.tsx">Analytics</TabsTrigger>
-          <TabsTrigger value="audience" data-id="9rc8633uc" data-path="src/components/CampaignManager.tsx">Audience</TabsTrigger>
+      <Tabs value={activeTab} onValueChange={setActiveTab}>
+        <TabsList>
+          <TabsTrigger value="campaigns">Campaigns</TabsTrigger>
+          <TabsTrigger value="analytics">Analytics</TabsTrigger>
+          <TabsTrigger value="audience">Audience</TabsTrigger>
         </TabsList>
 
-        <TabsContent value="campaigns" className="space-y-4" data-id="3xwgagz7x" data-path="src/components/CampaignManager.tsx">
+        <TabsContent value="campaigns" className="space-y-4">
           {isLoading ?
-          <div className="text-center py-8" data-id="f9d82g1uy" data-path="src/components/CampaignManager.tsx">Loading campaigns...</div> :
+          <div className="text-center py-8">Loading campaigns...</div> :
           campaigns.length === 0 ?
-          <Card data-id="wyq3sgywc" data-path="src/components/CampaignManager.tsx">
-              <CardContent className="py-8 text-center" data-id="59k37kelx" data-path="src/components/CampaignManager.tsx">
-                <h3 className="text-lg font-semibold mb-2" data-id="csvjlancy" data-path="src/components/CampaignManager.tsx">No campaigns yet</h3>
-                <p className="text-gray-600 mb-4" data-id="2seig4bno" data-path="src/components/CampaignManager.tsx">Create your first campaign to engage with customers</p>
-                <Button onClick={() => setDialogOpen(true)} data-id="tcrtfm425" data-path="src/components/CampaignManager.tsx">
-                  <Plus className="h-4 w-4 mr-2" data-id="b9cpfirer" data-path="src/components/CampaignManager.tsx" />
+          <Card>
+              <CardContent className="py-8 text-center">
+                <h3 className="text-lg font-semibold mb-2">No campaigns yet</h3>
+                <p className="text-gray-600 mb-4">Create your first campaign to engage with customers</p>
+                <Button onClick={() => setDialogOpen(true)}>
+                  <Plus className="h-4 w-4 mr-2" />
                   Create Campaign
                 </Button>
               </CardContent>
             </Card> :
 
-          <div className="grid gap-4" data-id="h3tnd0cna" data-path="src/components/CampaignManager.tsx">
+          <div className="grid gap-4">
               {campaigns.map((campaign) =>
-            <Card key={campaign.ID} data-id="5qyfbc36d" data-path="src/components/CampaignManager.tsx">
-                  <CardHeader data-id="oimydj1da" data-path="src/components/CampaignManager.tsx">
-                    <div className="flex justify-between items-start" data-id="wbw1d9q4s" data-path="src/components/CampaignManager.tsx">
-                      <div data-id="0r0iqzatx" data-path="src/components/CampaignManager.tsx">
-                        <CardTitle className="flex items-center gap-2" data-id="q3jjfc34y" data-path="src/components/CampaignManager.tsx">
-                          {campaign.type === 'email' ? <Mail className="h-5 w-5" data-id="jzttflg0z" data-path="src/components/CampaignManager.tsx" /> : <MessageSquare className="h-5 w-5" data-id="c2yvolefn" data-path="src/components/CampaignManager.tsx" />}
+            <Card key={campaign.ID}>
+                  <CardHeader>
+                    <div className="flex justify-between items-start">
+                      <div>
+                        <CardTitle className="flex items-center gap-2">
+                          {campaign.type === 'email' ? <Mail className="h-5 w-5" /> : <MessageSquare className="h-5 w-5" />}
                           {campaign.name}
                         </CardTitle>
-                        <CardDescription data-id="upz6n16ls" data-path="src/components/CampaignManager.tsx">{campaign.description}</CardDescription>
+                        <CardDescription>{campaign.description}</CardDescription>
                       </div>
-                      <div className="flex items-center gap-2" data-id="zaq9r3ps9" data-path="src/components/CampaignManager.tsx">
+                      <div className="flex items-center gap-2">
                         {getStatusBadge(campaign.status)}
-                        <div className="flex gap-1" data-id="ne5ob7iqr" data-path="src/components/CampaignManager.tsx">
+                        <div className="flex gap-1">
                           <Button
                         variant="ghost"
                         size="sm"
-                        onClick={() => editCampaign(campaign)} data-id="qem7bnhvb" data-path="src/components/CampaignManager.tsx">
+                        onClick={() => editCampaign(campaign)}>
 
-                            <Edit className="h-4 w-4" data-id="jrihjwk7u" data-path="src/components/CampaignManager.tsx" />
+                            <Edit className="h-4 w-4" />
                           </Button>
                           {campaign.status === 'draft' &&
                       <Button
                         variant="ghost"
                         size="sm"
                         onClick={() => sendCampaign(campaign)}
-                        disabled={isLoading} data-id="xsatnn3z6" data-path="src/components/CampaignManager.tsx">
+                        disabled={isLoading}>
 
-                              <Send className="h-4 w-4" data-id="1shvkbdyf" data-path="src/components/CampaignManager.tsx" />
+                              <Send className="h-4 w-4" />
                             </Button>
                       }
                           <Button
                         variant="ghost"
                         size="sm"
-                        onClick={() => deleteCampaign(campaign.ID)} data-id="7ddjnxj57" data-path="src/components/CampaignManager.tsx">
+                        onClick={() => deleteCampaign(campaign.ID)}>
 
-                            <Trash2 className="h-4 w-4" data-id="bug61d235" data-path="src/components/CampaignManager.tsx" />
+                            <Trash2 className="h-4 w-4" />
                           </Button>
                         </div>
                       </div>
                     </div>
                   </CardHeader>
-                  <CardContent data-id="mekqlebtx" data-path="src/components/CampaignManager.tsx">
-                    <div className="grid grid-cols-4 gap-4 text-sm" data-id="fadr1fyno" data-path="src/components/CampaignManager.tsx">
-                      <div data-id="fxzcphatk" data-path="src/components/CampaignManager.tsx">
-                        <p className="font-medium" data-id="7o0lhtopi" data-path="src/components/CampaignManager.tsx">Sent</p>
-                        <p className="text-2xl font-bold" data-id="il460nxzd" data-path="src/components/CampaignManager.tsx">{campaign.sent_count}</p>
+                  <CardContent>
+                    <div className="grid grid-cols-4 gap-4 text-sm">
+                      <div>
+                        <p className="font-medium">Sent</p>
+                        <p className="text-2xl font-bold">{campaign.sent_count}</p>
                       </div>
-                      <div data-id="mgv4rxugw" data-path="src/components/CampaignManager.tsx">
-                        <p className="font-medium" data-id="xzkkpn7jr" data-path="src/components/CampaignManager.tsx">Delivered</p>
-                        <p className="text-2xl font-bold" data-id="le6nskq5i" data-path="src/components/CampaignManager.tsx">{campaign.delivered_count}</p>
+                      <div>
+                        <p className="font-medium">Delivered</p>
+                        <p className="text-2xl font-bold">{campaign.delivered_count}</p>
                       </div>
-                      <div data-id="mf9nedsf2" data-path="src/components/CampaignManager.tsx">
-                        <p className="font-medium" data-id="tatru6v9e" data-path="src/components/CampaignManager.tsx">Opened</p>
-                        <p className="text-2xl font-bold" data-id="ept3o098r" data-path="src/components/CampaignManager.tsx">{campaign.opened_count}</p>
+                      <div>
+                        <p className="font-medium">Opened</p>
+                        <p className="text-2xl font-bold">{campaign.opened_count}</p>
                       </div>
-                      <div data-id="o566iadqd" data-path="src/components/CampaignManager.tsx">
-                        <p className="font-medium" data-id="8r1ban2qx" data-path="src/components/CampaignManager.tsx">Engagement</p>
-                        <p className="text-2xl font-bold" data-id="o7bfvhyg7" data-path="src/components/CampaignManager.tsx">{getEngagementRate(campaign)}%</p>
+                      <div>
+                        <p className="font-medium">Engagement</p>
+                        <p className="text-2xl font-bold">{getEngagementRate(campaign)}%</p>
                       </div>
                     </div>
                     {campaign.sent_count > 0 &&
-                <div className="mt-4" data-id="67w8tmwpg" data-path="src/components/CampaignManager.tsx">
-                        <div className="flex justify-between text-sm mb-1" data-id="h988nw5cq" data-path="src/components/CampaignManager.tsx">
-                          <span data-id="zy0n8gcst" data-path="src/components/CampaignManager.tsx">Delivery Rate</span>
-                          <span data-id="4ogidaha6" data-path="src/components/CampaignManager.tsx">{Math.round(campaign.delivered_count / campaign.sent_count * 100)}%</span>
+                <div className="mt-4">
+                        <div className="flex justify-between text-sm mb-1">
+                          <span>Delivery Rate</span>
+                          <span>{Math.round(campaign.delivered_count / campaign.sent_count * 100)}%</span>
                         </div>
                         <Progress
                     value={campaign.delivered_count / campaign.sent_count * 100}
-                    className="h-2" data-id="kd2x85nwq" data-path="src/components/CampaignManager.tsx" />
+                    className="h-2" />
 
                       </div>
                 }
@@ -534,111 +534,111 @@ export default function CampaignManager() {
           }
         </TabsContent>
 
-        <TabsContent value="analytics" className="space-y-4" data-id="vxblntano" data-path="src/components/CampaignManager.tsx">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4" data-id="0mbyc4k9g" data-path="src/components/CampaignManager.tsx">
-            <Card data-id="aqq1tgtkp" data-path="src/components/CampaignManager.tsx">
-              <CardHeader className="pb-2" data-id="gz39oq6ki" data-path="src/components/CampaignManager.tsx">
-                <CardTitle className="text-sm font-medium" data-id="6aqy2adr0" data-path="src/components/CampaignManager.tsx">Total Campaigns</CardTitle>
+        <TabsContent value="analytics" className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <Card>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-sm font-medium">Total Campaigns</CardTitle>
               </CardHeader>
-              <CardContent data-id="ogspvr35o" data-path="src/components/CampaignManager.tsx">
-                <div className="text-2xl font-bold" data-id="055lhyrvk" data-path="src/components/CampaignManager.tsx">{campaigns.length}</div>
-                <p className="text-xs text-gray-600" data-id="u1v38wrmd" data-path="src/components/CampaignManager.tsx">All time</p>
+              <CardContent>
+                <div className="text-2xl font-bold">{campaigns.length}</div>
+                <p className="text-xs text-gray-600">All time</p>
               </CardContent>
             </Card>
-            <Card data-id="rzuuff0w0" data-path="src/components/CampaignManager.tsx">
-              <CardHeader className="pb-2" data-id="0xk1nzyea" data-path="src/components/CampaignManager.tsx">
-                <CardTitle className="text-sm font-medium" data-id="1tm99ya0x" data-path="src/components/CampaignManager.tsx">Total Sent</CardTitle>
+            <Card>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-sm font-medium">Total Sent</CardTitle>
               </CardHeader>
-              <CardContent data-id="m5sk2q0ks" data-path="src/components/CampaignManager.tsx">
-                <div className="text-2xl font-bold" data-id="22rotepnf" data-path="src/components/CampaignManager.tsx">
+              <CardContent>
+                <div className="text-2xl font-bold">
                   {campaigns.reduce((sum, c) => sum + c.sent_count, 0)}
                 </div>
-                <p className="text-xs text-gray-600" data-id="wilil4hzi" data-path="src/components/CampaignManager.tsx">Messages sent</p>
+                <p className="text-xs text-gray-600">Messages sent</p>
               </CardContent>
             </Card>
-            <Card data-id="r7m05npxj" data-path="src/components/CampaignManager.tsx">
-              <CardHeader className="pb-2" data-id="as5iggpca" data-path="src/components/CampaignManager.tsx">
-                <CardTitle className="text-sm font-medium" data-id="yek6qfr51" data-path="src/components/CampaignManager.tsx">Avg. Engagement</CardTitle>
+            <Card>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-sm font-medium">Avg. Engagement</CardTitle>
               </CardHeader>
-              <CardContent data-id="2ft5vxaij" data-path="src/components/CampaignManager.tsx">
-                <div className="text-2xl font-bold" data-id="5ztn8jko8" data-path="src/components/CampaignManager.tsx">
+              <CardContent>
+                <div className="text-2xl font-bold">
                   {campaigns.length > 0 ?
                   Math.round(campaigns.reduce((sum, c) => sum + getEngagementRate(c), 0) / campaigns.length) :
                   0}%
                 </div>
-                <p className="text-xs text-gray-600" data-id="y2i5z2l88" data-path="src/components/CampaignManager.tsx">Open rate</p>
+                <p className="text-xs text-gray-600">Open rate</p>
               </CardContent>
             </Card>
           </div>
         </TabsContent>
 
-        <TabsContent value="audience" className="space-y-4" data-id="m3g76phxz" data-path="src/components/CampaignManager.tsx">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4" data-id="h5wtfomk1" data-path="src/components/CampaignManager.tsx">
-            <Card data-id="qtuwajapc" data-path="src/components/CampaignManager.tsx">
-              <CardHeader className="pb-2" data-id="ck3ys9tgu" data-path="src/components/CampaignManager.tsx">
-                <CardTitle className="text-sm font-medium flex items-center gap-2" data-id="e2jsxw3qm" data-path="src/components/CampaignManager.tsx">
-                  <Users className="h-4 w-4" data-id="9ecgvbp64" data-path="src/components/CampaignManager.tsx" />
+        <TabsContent value="audience" className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <Card>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-sm font-medium flex items-center gap-2">
+                  <Users className="h-4 w-4" />
                   Total Users
                 </CardTitle>
               </CardHeader>
-              <CardContent data-id="6jrr1f3yh" data-path="src/components/CampaignManager.tsx">
-                <div className="text-2xl font-bold" data-id="jdiy68s4n" data-path="src/components/CampaignManager.tsx">{getTotalUsers()}</div>
-                <p className="text-xs text-gray-600" data-id="s411scc90" data-path="src/components/CampaignManager.tsx">Registered users</p>
+              <CardContent>
+                <div className="text-2xl font-bold">{getTotalUsers()}</div>
+                <p className="text-xs text-gray-600">Registered users</p>
               </CardContent>
             </Card>
-            <Card data-id="xc5wuar0u" data-path="src/components/CampaignManager.tsx">
-              <CardHeader className="pb-2" data-id="7clvlwskc" data-path="src/components/CampaignManager.tsx">
-                <CardTitle className="text-sm font-medium flex items-center gap-2" data-id="xbz4vobvf" data-path="src/components/CampaignManager.tsx">
-                  <Mail className="h-4 w-4" data-id="9zvkd66wx" data-path="src/components/CampaignManager.tsx" />
+            <Card>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-sm font-medium flex items-center gap-2">
+                  <Mail className="h-4 w-4" />
                   Email Reachable
                 </CardTitle>
               </CardHeader>
-              <CardContent data-id="j2yuzvwr9" data-path="src/components/CampaignManager.tsx">
-                <div className="text-2xl font-bold" data-id="xthr2ytw0" data-path="src/components/CampaignManager.tsx">{getEmailUsers()}</div>
-                <p className="text-xs text-gray-600" data-id="12jotzfza" data-path="src/components/CampaignManager.tsx">Accept email marketing</p>
+              <CardContent>
+                <div className="text-2xl font-bold">{getEmailUsers()}</div>
+                <p className="text-xs text-gray-600">Accept email marketing</p>
               </CardContent>
             </Card>
-            <Card data-id="kcuzx9zsb" data-path="src/components/CampaignManager.tsx">
-              <CardHeader className="pb-2" data-id="a5hqtqemw" data-path="src/components/CampaignManager.tsx">
-                <CardTitle className="text-sm font-medium flex items-center gap-2" data-id="li9j0j00q" data-path="src/components/CampaignManager.tsx">
-                  <MessageSquare className="h-4 w-4" data-id="kmpjw3xj5" data-path="src/components/CampaignManager.tsx" />
+            <Card>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-sm font-medium flex items-center gap-2">
+                  <MessageSquare className="h-4 w-4" />
                   WhatsApp Reachable
                 </CardTitle>
               </CardHeader>
-              <CardContent data-id="ik8ea6wmh" data-path="src/components/CampaignManager.tsx">
-                <div className="text-2xl font-bold" data-id="bzhxsbnwv" data-path="src/components/CampaignManager.tsx">{getWhatsAppUsers()}</div>
-                <p className="text-xs text-gray-600" data-id="m37mucwpj" data-path="src/components/CampaignManager.tsx">Accept WhatsApp marketing</p>
+              <CardContent>
+                <div className="text-2xl font-bold">{getWhatsAppUsers()}</div>
+                <p className="text-xs text-gray-600">Accept WhatsApp marketing</p>
               </CardContent>
             </Card>
           </div>
           
-          <Card data-id="m2kiif0v0" data-path="src/components/CampaignManager.tsx">
-            <CardHeader data-id="zkserhnyg" data-path="src/components/CampaignManager.tsx">
-              <CardTitle data-id="9et42nbd9" data-path="src/components/CampaignManager.tsx">User Preferences</CardTitle>
-              <CardDescription data-id="q9fvkxzat" data-path="src/components/CampaignManager.tsx">
+          <Card>
+            <CardHeader>
+              <CardTitle>User Preferences</CardTitle>
+              <CardDescription>
                 Overview of user notification preferences
               </CardDescription>
             </CardHeader>
-            <CardContent data-id="46w85az6q" data-path="src/components/CampaignManager.tsx">
-              <div className="space-y-4" data-id="hlki2rr4u" data-path="src/components/CampaignManager.tsx">
-                <div data-id="ojtk2fnas" data-path="src/components/CampaignManager.tsx">
-                  <div className="flex justify-between text-sm mb-1" data-id="tvyfk80ph" data-path="src/components/CampaignManager.tsx">
-                    <span data-id="ycjw7r23e" data-path="src/components/CampaignManager.tsx">Email Notifications</span>
-                    <span data-id="6lf7npa3e" data-path="src/components/CampaignManager.tsx">{getEmailUsers()}/{getTotalUsers()}</span>
+            <CardContent>
+              <div className="space-y-4">
+                <div>
+                  <div className="flex justify-between text-sm mb-1">
+                    <span>Email Notifications</span>
+                    <span>{getEmailUsers()}/{getTotalUsers()}</span>
                   </div>
                   <Progress
                     value={getTotalUsers() > 0 ? getEmailUsers() / getTotalUsers() * 100 : 0}
-                    className="h-2" data-id="sedzvb9xi" data-path="src/components/CampaignManager.tsx" />
+                    className="h-2" />
 
                 </div>
-                <div data-id="cimxno4u8" data-path="src/components/CampaignManager.tsx">
-                  <div className="flex justify-between text-sm mb-1" data-id="zopte530o" data-path="src/components/CampaignManager.tsx">
-                    <span data-id="pe9rtuuni" data-path="src/components/CampaignManager.tsx">WhatsApp Notifications</span>
-                    <span data-id="wxq7c8d4m" data-path="src/components/CampaignManager.tsx">{getWhatsAppUsers()}/{getTotalUsers()}</span>
+                <div>
+                  <div className="flex justify-between text-sm mb-1">
+                    <span>WhatsApp Notifications</span>
+                    <span>{getWhatsAppUsers()}/{getTotalUsers()}</span>
                   </div>
                   <Progress
                     value={getTotalUsers() > 0 ? getWhatsAppUsers() / getTotalUsers() * 100 : 0}
-                    className="h-2" data-id="2pw3jv90o" data-path="src/components/CampaignManager.tsx" />
+                    className="h-2" />
 
                 </div>
               </div>

@@ -99,7 +99,7 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
       updateQuantity,
       clearCart,
       getTotalPrice
-    }} data-id="iy9qadu4n" data-path="src/contexts/CartContext.tsx">
+    }}>
       {children}
     </CartContext.Provider>);
 

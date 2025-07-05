@@ -228,13 +228,13 @@ export default function AuthPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 px-4" data-id="hv8syiznx" data-path="src/pages/AuthPage.tsx">
-      <Card className="w-full max-w-md shadow-xl" data-id="3p94hu8o2" data-path="src/pages/AuthPage.tsx">
-        <CardHeader className="space-y-1" data-id="vb0m50vct" data-path="src/pages/AuthPage.tsx">
-          <CardTitle className="text-2xl font-bold text-center" data-id="23qeuyng0" data-path="src/pages/AuthPage.tsx">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 px-4">
+      <Card className="w-full max-w-md shadow-xl">
+        <CardHeader className="space-y-1">
+          <CardTitle className="text-2xl font-bold text-center">
             {isLogin ? 'Welcome Back' : 'Create Account'}
           </CardTitle>
-          <CardDescription className="text-center" data-id="4vje6grhk" data-path="src/pages/AuthPage.tsx">
+          <CardDescription className="text-center">
             {isLogin ?
             'Sign in to your account to continue' :
             'Sign up to start shopping with us'
@@ -242,98 +242,98 @@ export default function AuthPage() {
           </CardDescription>
         </CardHeader>
         
-        <CardContent className="space-y-4" data-id="2ssxzx7aj" data-path="src/pages/AuthPage.tsx">
-          <Tabs value={authMethod} onValueChange={(value) => switchAuthMethod(value as 'email' | 'phone')} data-id="lfdsonmxh" data-path="src/pages/AuthPage.tsx">
-            <TabsList className="grid w-full grid-cols-2" data-id="hg9xynm44" data-path="src/pages/AuthPage.tsx">
-              <TabsTrigger value="email" className="flex items-center gap-2" data-id="muimcnsej" data-path="src/pages/AuthPage.tsx">
-                <Mail className="h-4 w-4" data-id="n9bgttlyp" data-path="src/pages/AuthPage.tsx" />
+        <CardContent className="space-y-4">
+          <Tabs value={authMethod} onValueChange={(value) => switchAuthMethod(value as 'email' | 'phone')}>
+            <TabsList className="grid w-full grid-cols-2">
+              <TabsTrigger value="email" className="flex items-center gap-2">
+                <Mail className="h-4 w-4" />
                 Email
               </TabsTrigger>
-              <TabsTrigger value="phone" className="flex items-center gap-2" data-id="3w3qte46q" data-path="src/pages/AuthPage.tsx">
-                <Phone className="h-4 w-4" data-id="6zeolo8qm" data-path="src/pages/AuthPage.tsx" />
+              <TabsTrigger value="phone" className="flex items-center gap-2">
+                <Phone className="h-4 w-4" />
                 Phone
               </TabsTrigger>
             </TabsList>
             
-            <TabsContent value="email" className="space-y-4 mt-4" data-id="0c5wets29" data-path="src/pages/AuthPage.tsx">
-              <form onSubmit={handleEmailAuth} className="space-y-4" data-id="l3yi6kfl5" data-path="src/pages/AuthPage.tsx">
+            <TabsContent value="email" className="space-y-4 mt-4">
+              <form onSubmit={handleEmailAuth} className="space-y-4">
                 {!isLogin &&
-                <div className="space-y-2" data-id="qm8fwse11" data-path="src/pages/AuthPage.tsx">
-                    <Label htmlFor="name" data-id="spa0r3v76" data-path="src/pages/AuthPage.tsx">Full Name</Label>
+                <div className="space-y-2">
+                    <Label htmlFor="name">Full Name</Label>
                     <Input
                     id="name"
                     type="text"
                     placeholder="Enter your full name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    required={!isLogin} data-id="nfptnjyf6" data-path="src/pages/AuthPage.tsx" />
+                    required={!isLogin} />
 
                   </div>
                 }
                 
-                <div className="space-y-2" data-id="0rm7utjp4" data-path="src/pages/AuthPage.tsx">
-                  <Label htmlFor="email" data-id="1kkyu8tmf" data-path="src/pages/AuthPage.tsx">Email</Label>
+                <div className="space-y-2">
+                  <Label htmlFor="email">Email</Label>
                   <Input
                     id="email"
                     type="email"
                     placeholder="Enter your email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    required data-id="9hps5mtq7" data-path="src/pages/AuthPage.tsx" />
+                    required />
 
                 </div>
                 
-                <div className="space-y-2" data-id="wi1m83ear" data-path="src/pages/AuthPage.tsx">
-                  <Label htmlFor="password" data-id="sy74ajag3" data-path="src/pages/AuthPage.tsx">Password</Label>
-                  <div className="relative" data-id="gjz7fkigs" data-path="src/pages/AuthPage.tsx">
+                <div className="space-y-2">
+                  <Label htmlFor="password">Password</Label>
+                  <div className="relative">
                     <Input
                       id="password"
                       type={showPassword ? 'text' : 'password'}
                       placeholder="Enter your password"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
-                      required data-id="v48i5riw2" data-path="src/pages/AuthPage.tsx" />
+                      required />
 
                     <Button
                       type="button"
                       variant="ghost"
                       size="sm"
                       className="absolute right-0 top-0 h-full px-3 py-2 hover:bg-transparent"
-                      onClick={() => setShowPassword(!showPassword)} data-id="qp9yqprp3" data-path="src/pages/AuthPage.tsx">
+                      onClick={() => setShowPassword(!showPassword)}>
 
                       {showPassword ?
-                      <EyeOff className="h-4 w-4" data-id="w1cbkqa84" data-path="src/pages/AuthPage.tsx" /> :
+                      <EyeOff className="h-4 w-4" /> :
 
-                      <Eye className="h-4 w-4" data-id="pjqgl4l7o" data-path="src/pages/AuthPage.tsx" />
+                      <Eye className="h-4 w-4" />
                       }
                     </Button>
                   </div>
                 </div>
                 
-                <Button type="submit" className="w-full" disabled={isLoading} data-id="xo9xrgp9i" data-path="src/pages/AuthPage.tsx">
+                <Button type="submit" className="w-full" disabled={isLoading}>
                   {isLoading ? 'Processing...' : isLogin ? 'Sign In' : 'Sign Up'}
                 </Button>
               </form>
             </TabsContent>
             
-            <TabsContent value="phone" className="space-y-4 mt-4" data-id="enpa73lot" data-path="src/pages/AuthPage.tsx">
-              <form onSubmit={handlePhoneAuth} className="space-y-4" data-id="k9v3hb8zj" data-path="src/pages/AuthPage.tsx">
+            <TabsContent value="phone" className="space-y-4 mt-4">
+              <form onSubmit={handlePhoneAuth} className="space-y-4">
                 {!isLogin &&
-                <div className="space-y-2" data-id="702c0advh" data-path="src/pages/AuthPage.tsx">
-                    <Label htmlFor="phone-name" data-id="pw0xzmdzp" data-path="src/pages/AuthPage.tsx">Full Name</Label>
+                <div className="space-y-2">
+                    <Label htmlFor="phone-name">Full Name</Label>
                     <Input
                     id="phone-name"
                     type="text"
                     placeholder="Enter your full name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    required={!isLogin} data-id="h3lqu0dpd" data-path="src/pages/AuthPage.tsx" />
+                    required={!isLogin} />
 
                   </div>
                 }
                 
-                <div className="space-y-2" data-id="xvfgih1tl" data-path="src/pages/AuthPage.tsx">
-                  <Label htmlFor="phone" data-id="kg86dsdm1" data-path="src/pages/AuthPage.tsx">Phone Number</Label>
+                <div className="space-y-2">
+                  <Label htmlFor="phone">Phone Number</Label>
                   <Input
                     id="phone"
                     type="tel"
@@ -341,13 +341,13 @@ export default function AuthPage() {
                     value={phoneNumber}
                     onChange={(e) => setPhoneNumber(e.target.value)}
                     required
-                    disabled={otpSent && otpTimer > 0} data-id="jdu5twwt2" data-path="src/pages/AuthPage.tsx" />
+                    disabled={otpSent && otpTimer > 0} />
 
                 </div>
                 
                 {otpSent &&
-                <div className="space-y-2" data-id="x011rjizz" data-path="src/pages/AuthPage.tsx">
-                    <Label htmlFor="otp" data-id="ju7s6chwr" data-path="src/pages/AuthPage.tsx">Verification Code</Label>
+                <div className="space-y-2">
+                    <Label htmlFor="otp">Verification Code</Label>
                     <Input
                     id="otp"
                     type="text"
@@ -355,20 +355,20 @@ export default function AuthPage() {
                     value={otpCode}
                     onChange={(e) => setOtpCode(e.target.value)}
                     maxLength={6}
-                    required data-id="vvsuh71hd" data-path="src/pages/AuthPage.tsx" />
+                    required />
 
-                    <p className="text-sm text-gray-600" data-id="s4ayugf4g" data-path="src/pages/AuthPage.tsx">
+                    <p className="text-sm text-gray-600">
                       Code sent to {phoneNumber}
                       {otpTimer > 0 && ` • Resend in ${otpTimer}s`}
                     </p>
                   </div>
                 }
                 
-                <div className="flex gap-2" data-id="g7rfyw0o7" data-path="src/pages/AuthPage.tsx">
+                <div className="flex gap-2">
                   <Button
                     type="submit"
                     className="flex-1"
-                    disabled={isLoading} data-id="u69o3tu1x" data-path="src/pages/AuthPage.tsx">
+                    disabled={isLoading}>
 
                     {isLoading ? 'Processing...' :
                     !otpSent ? 'Send OTP' : isLogin ? 'Verify & Sign In' : 'Verify & Sign Up'
@@ -380,9 +380,9 @@ export default function AuthPage() {
                     type="button"
                     variant="outline"
                     onClick={handleSendOTP}
-                    disabled={isLoading} data-id="7xqs7bg6i" data-path="src/pages/AuthPage.tsx">
+                    disabled={isLoading}>
 
-                      <MessageSquare className="h-4 w-4" data-id="bn6shj3td" data-path="src/pages/AuthPage.tsx" />
+                      <MessageSquare className="h-4 w-4" />
                     </Button>
                   }
                 </div>
@@ -390,10 +390,10 @@ export default function AuthPage() {
             </TabsContent>
           </Tabs>
           
-          <div className="space-y-2" data-id="w46uz5eg4" data-path="src/pages/AuthPage.tsx">
-            <Separator data-id="qjxowptgo" data-path="src/pages/AuthPage.tsx" />
-            <div className="text-center text-sm text-gray-600" data-id="iusg6ii4b" data-path="src/pages/AuthPage.tsx">
-              <strong data-id="g8xfv4cd7" data-path="src/pages/AuthPage.tsx">Demo Admin Access:</strong>
+          <div className="space-y-2">
+            <Separator />
+            <div className="text-center text-sm text-gray-600">
+              <strong>Demo Admin Access:</strong>
             </div>
             <Button
               variant="outline"
@@ -404,24 +404,24 @@ export default function AuthPage() {
                 setPassword('admin123');
                 setAuthMethod('email');
                 setIsLogin(true);
-              }} data-id="wlswe82ab" data-path="src/pages/AuthPage.tsx">
+              }}>
 
               Quick Admin Login
             </Button>
-            <div className="text-center text-xs text-gray-500 space-y-1" data-id="l29p6o1w3" data-path="src/pages/AuthPage.tsx">
-              <div data-id="uk39rn8ju" data-path="src/pages/AuthPage.tsx">Or any email containing "admin" with password "admin123"</div>
+            <div className="text-center text-xs text-gray-500 space-y-1">
+              <div>Or any email containing "admin" with password "admin123"</div>
             </div>
           </div>
         </CardContent>
         
-        <CardFooter className="flex flex-col space-y-4" data-id="3jytx5bmz" data-path="src/pages/AuthPage.tsx">
-          <Separator data-id="tg95m880y" data-path="src/pages/AuthPage.tsx" />
-          <div className="text-center text-sm" data-id="xbi8dqcz9" data-path="src/pages/AuthPage.tsx">
+        <CardFooter className="flex flex-col space-y-4">
+          <Separator />
+          <div className="text-center text-sm">
             {isLogin ? "Don't have an account? " : "Already have an account? "}
             <Button
               variant="link"
               className="p-0 h-auto font-semibold"
-              onClick={() => switchAuthMode(!isLogin)} data-id="e688hhfua" data-path="src/pages/AuthPage.tsx">
+              onClick={() => switchAuthMode(!isLogin)}>
 
               {isLogin ? 'Sign up' : 'Sign in'}
             </Button>

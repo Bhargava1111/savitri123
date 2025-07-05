@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter, DialogDescription } from '@/components/ui/dialog';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
@@ -302,9 +302,9 @@ const UserManagement: React.FC<UserManagementProps> = () => {
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
             <DialogTitle>{currentEditingUser ? 'Edit User' : 'Add New User'}</DialogTitle>
-            <CardDescription>
+            <DialogDescription>
               {currentEditingUser ? `Editing user ${currentEditingUser.Name}` : 'Create a new user account.'}
-            </CardDescription>
+            </DialogDescription>
           </DialogHeader>
           <div className="grid gap-4 py-4">
             <div className="grid grid-cols-4 items-center gap-4">
@@ -374,9 +374,9 @@ const UserManagement: React.FC<UserManagementProps> = () => {
         <DialogContent>
           <DialogHeader>
             <DialogTitle>Confirm Deletion</DialogTitle>
-            <CardDescription>
+            <DialogDescription>
               Are you sure you want to delete user "{userToDelete?.Name}"? This action cannot be undone.
-            </CardDescription>
+            </DialogDescription>
           </DialogHeader>
           <DialogFooter>
             <Button variant="outline" onClick={() => setDeleteConfirmModalOpen(false)}>

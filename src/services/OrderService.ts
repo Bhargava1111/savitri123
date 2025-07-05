@@ -1,7 +1,7 @@
 import { CartItem } from '../contexts/CartContext';
 
-const ORDERS_TABLE_ID = '10401';
-const ORDER_ITEMS_TABLE_ID = '10402';
+const ORDERS_TABLE_ID = 'orders';
+const ORDER_ITEMS_TABLE_ID = 'order_items';
 const NOTIFICATIONS_TABLE_ID = '10412';
 
 export interface Order {
@@ -288,158 +288,116 @@ export class OrderService {
           { name: 'user_id', op: 'Equal', value: userId }
         ]
       });
-
       if (error) {
-        console.error(`OrderService: Error fetching user orders for user ${userId}:`, error);
-        throw new Error(error);
+        console.error('OrderService: Error fetching user orders:', error);
+        throw new Error(error.message || 'Failed to fetch user orders');
       }
-      console.log(`OrderService: Successfully fetched orders for user ${userId}:`, data);
-
-      return data?.List || [];
+      return data;
     } catch (error) {
       console.error('Error fetching user orders:', error);
       throw error;
     }
   }
 
-  // Get order details by ID
-  static async getOrderById(orderId: string) {
+  // Add this inside the OrderService class
+  static async getAllOrders(params?: { pageNo?: number; pageSize?: number; status?: string }) {
     try {
       if (!window.ezsite || !window.ezsite.apis) {
-        console.error('OrderService: window.ezsite.apis is not defined. Cannot get order details.');
-        throw new Error('API not available');
+        throw new Error('API client not initialized. Please refresh the page.');
       }
-      console.log(`OrderService: Fetching order ${orderId} from table ${ORDERS_TABLE_ID}`);
-      const { data, error } = await window.ezsite.apis.tablePage(ORDERS_TABLE_ID, {
+      const { pageNo = 1, pageSize = 20, status } = params || {};
+      const filters: any[] = [];
+      if (status && status !== 'all') {
+        filters.push({
+          name: 'order_status',
+          op: 'Equal',
+          value: status
+        });
+      }
+      const response = await window.ezsite.apis.tablePage(ORDERS_TABLE_ID, {
+        PageNo: pageNo,
+        PageSize: pageSize,
+        OrderByField: 'id',
+        IsAsc: false,
+        Filters: filters
+      });
+      if (!response || typeof response !== 'object') {
+        throw new Error('Invalid response from server');
+      }
+      if (response.error) {
+        throw new Error(response.error);
+      }
+      const { data } = response;
+      if (!data || !Array.isArray(data.List)) {
+        throw new Error('Invalid data format received from server');
+      }
+      return {
+        orders: data.List,
+        totalCount: data.VirtualCount || 0,
+        currentPage: pageNo,
+        totalPages: Math.ceil((data.VirtualCount || 0) / pageSize)
+      };
+    } catch (error) {
+      console.error('Error fetching all orders:', error);
+      throw error;
+    }
+  }
+
+  static async getOrderById(orderId: string | number) {
+    try {
+      if (!window.ezsite || !window.ezsite.apis) {
+        throw new Error('API client not initialized. Please refresh the page.');
+      }
+      // Fetch the order
+      const { data: orderData, error: orderError } = await window.ezsite.apis.tablePage(ORDERS_TABLE_ID, {
         PageNo: 1,
         PageSize: 1,
         Filters: [
           { name: 'id', op: 'Equal', value: orderId }
         ]
       });
-
-      if (error) {
-        console.error(`OrderService: Error fetching order ${orderId}:`, error);
-        throw new Error(error);
+      if (orderError || !orderData?.List?.[0]) {
+        throw new Error(orderError || 'Order not found');
       }
-
-      if (!data?.List?.[0]) {
-        console.error(`OrderService: Order ${orderId} not found.`);
-        throw new Error('Order not found');
-      }
-
-      console.log(`OrderService: Successfully fetched order ${orderId}:`, data.List[0]);
-
-      // Get order items
-      console.log(`OrderService: Fetching items for order ${orderId} from table ${ORDER_ITEMS_TABLE_ID}`);
+      const order = orderData.List[0];
+      // Fetch order items
       const { data: itemsData, error: itemsError } = await window.ezsite.apis.tablePage(ORDER_ITEMS_TABLE_ID, {
         PageNo: 1,
         PageSize: 100,
         Filters: [
-          { name: 'order_id', op: 'Equal', value: orderId }
+          { name: 'order_id', op: 'Equal', value: String(orderId) }
         ]
       });
-
       if (itemsError) {
-        console.error(`OrderService: Error fetching items for order ${orderId}:`, itemsError);
         throw new Error(itemsError);
       }
-
-      console.log(`OrderService: Successfully fetched items for order ${orderId}:`, itemsData);
-
-      return {
-        order: data.List[0],
-        items: itemsData?.List || []
-      };
+      const items = Array.isArray(itemsData?.List) ? itemsData.List : [];
+      return { order, items };
     } catch (error) {
-      console.error('Error fetching order details:', error);
+      console.error('Error fetching order by ID:', error);
       throw error;
     }
   }
 
-  // Update order status
-  static async updateOrderStatus(orderId: string, status: Order['order_status']) {
+  static async updateOrderStatus(orderId: string, newStatus: string, trackingNumber: string) {
     try {
       if (!window.ezsite || !window.ezsite.apis) {
-        console.error('OrderService: window.ezsite.apis is not defined. Cannot update order status.');
-        throw new Error('API not available');
+        throw new Error('API client not initialized. Please refresh the page.');
       }
-      console.log(`OrderService: Updating status of order ${orderId} to ${status}`);
-      const { error } = await window.ezsite.apis.tableUpdate(ORDERS_TABLE_ID, {
+      // Use the correct table ID for orders
+      const ORDERS_TABLE_ID = 'orders';
+      const updateData = {
         id: orderId,
-        order_status: status
-      });
-
-      if (error) {
-        console.error(`OrderService: Error updating status of order ${orderId}:`, error);
-        throw new Error(error);
+        order_status: newStatus,
+        tracking_number: trackingNumber,
+      };
+      const response = await window.ezsite.apis.tableUpdate(ORDERS_TABLE_ID, updateData);
+      if (response.error) {
+        throw new Error(response.error);
       }
-
-      console.log(`OrderService: Successfully updated status of order ${orderId} to ${status}`);
-      return { success: true };
+      return response;
     } catch (error) {
       console.error('Error updating order status:', error);
-      throw error;
-    }
-  }
-
-  // Cancel order
-  static async cancelOrder(orderId: string) {
-    return this.updateOrderStatus(orderId, 'cancelled');
-  }
-
-  // Get order statistics for admin dashboard
-  static async getOrderStatistics() {
-    try {
-      if (!window.ezsite || !window.ezsite.apis) {
-        console.error('OrderService: window.ezsite.apis is not defined. Cannot get order statistics.');
-        throw new Error('API not available');
-      }
-      console.log(`OrderService: Fetching all orders from table ${ORDERS_TABLE_ID} for statistics`);
-      const { data, error } = await window.ezsite.apis.tablePage(ORDERS_TABLE_ID, {
-        PageNo: 1,
-        PageSize: 1000, // Get a large number of orders for statistics
-      });
-
-      if (error) {
-        console.error('OrderService: Error fetching orders for statistics:', error);
-        throw new Error(error);
-      }
-
-      const orders = data?.List || [];
-      console.log(`OrderService: Successfully fetched ${orders.length} orders for statistics`);
-
-      // Calculate statistics
-      const totalOrders = orders.length;
-      const totalRevenue = orders.reduce((sum, order) => sum + parseFloat(order.order_total || 0), 0);
-      
-      const statusCounts = {
-        pending: 0,
-        processing: 0,
-        shipped: 0,
-        delivered: 0,
-        cancelled: 0
-      };
-
-      orders.forEach(order => {
-        if (statusCounts.hasOwnProperty(order.order_status)) {
-          statusCounts[order.order_status as keyof typeof statusCounts]++;
-        }
-      });
-
-      // Get recent orders (last 5)
-      const recentOrders = [...orders]
-        .sort((a, b) => new Date(b.order_date).getTime() - new Date(a.order_date).getTime())
-        .slice(0, 5);
-
-      return {
-        totalOrders,
-        totalRevenue,
-        statusCounts,
-        recentOrders
-      };
-    } catch (error) {
-      console.error('Error getting order statistics:', error);
       throw error;
     }
   }

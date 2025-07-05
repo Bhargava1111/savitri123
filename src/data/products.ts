@@ -161,7 +161,7 @@ function getFallbackProducts(): Product[] {
   },
   // Add more products with variants
   {
-    id: '5',
+    id: '13',
     name: 'Veg Pickle Gongura Chilli Pickle',
     description: 'Authentic gongura chilli pickle made with traditional recipes and fresh ingredients.',
     price: 199.00,
@@ -180,7 +180,7 @@ function getFallbackProducts(): Product[] {
     is_active: true
   },
   {
-    id: '6',
+    id: '14',
     name: 'Non Veg Pickle Gongura Chicken Boneless Pickle',
     description: 'Delicious gongura chicken boneless pickle with authentic spices and tender chicken pieces.',
     price: 429.00,
@@ -199,7 +199,7 @@ function getFallbackProducts(): Product[] {
     is_active: true
   },
   {
-    id: '7',
+    id: '15',
     name: 'Veg Pickle Gongura Pickle',
     description: 'Traditional gongura pickle made with fresh sorrel leaves and authentic spices.',
     price: 199.00,
@@ -218,7 +218,7 @@ function getFallbackProducts(): Product[] {
     is_active: true
   },
   {
-    id: '8',
+    id: '16',
     name: 'Ceramic Coffee Mug Set',
     description: 'Set of 4 elegant ceramic coffee mugs perfect for your morning routine.',
     price: 39.99,
@@ -231,7 +231,7 @@ function getFallbackProducts(): Product[] {
     is_active: true
   },
   {
-    id: '9',
+    id: '17',
     name: 'Yoga Mat Pro',
     description: 'Non-slip yoga mat with extra cushioning for comfort during your practice.',
     price: 59.99,
